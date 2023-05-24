@@ -1,0 +1,99 @@
+.Add-widget{
+    font-style: normal;
+font-weight: 500;
+font-size: 20px;
+margin-left: 50px;
+margin-top: -33px;
+}
+.top-botton{
+     
+   display: flex;
+   justify-content:space-between;
+   margin-left: 950px;
+   margin-top:-25px;
+   
+}
+.monitoring-box{
+    padding: 10px;
+}
+.monitoring-Point{
+    margin-left: 20px;
+}
+.monitor-text{
+    margin-top: 10px;
+}
+.select-site{
+    font-style: normal;
+font-weight: 400;
+font-size: 16px;
+color: #B5B5B5;
+}
+.select-monitor{
+    
+    margin-top: 15px;
+    
+
+}
+.option-site{
+    width: 200px;
+    height: 300px;
+}
+.options-box{
+    background-color: white;
+    width:300px !important;
+}
+
+
+
+.select-moni{
+    margin-left: 450px;
+    margin-top: -75px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #B5B5B5;
+}
+.options-select{
+    margin-left: 450px;
+   
+   
+}
+.options-boxs{
+    background-color:#F4F4F4;
+    width:300px !important;
+    margin-left:10PX !important;
+}
+.graph-box{
+    margin-top:70px;
+  /* margin-right: 400px; */
+}
+.cord-monitor{
+    margin-top: 90px;
+    margin-left: 20px;
+}
+
+/* -----Test ---css */
+.menu-check{
+   position: relative;
+   top: -755px;
+}
+/* .menu-chek{
+   position: relative;
+   top:-300PX ;
+} */
+.check-box{
+   position: relative;
+   top: -1290px;
+}
+.papper-card{
+    margin-right: 30px;
+}
+
+.css-lfagbi>:not(style) {
+    margin: 8px;
+    width: 1044px;
+    height: 498px;
+    background-color: #EEF1F7;
+   
+    margin-left: -470px !important;
+}

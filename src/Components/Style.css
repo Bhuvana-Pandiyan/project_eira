@@ -1,0 +1,362 @@
+.homeside {
+    position: absolute;
+    margin-left: 20px;
+}
+
+.home-iconn {
+    position: absolute;
+    left: 8.33%;
+    right: 8.33%;
+    top: -18.33%;
+    bottom: 8.33%;
+}
+
+.details {
+    margin-right: 30px;
+}
+
+/* .barcharticon {
+    position: absolute;
+    left: 20.83%;
+    right: 20.83%;
+    top: 20.83%;
+    bottom: 20.83%;
+} */
+
+/* .removeicon {
+
+    width: 20px;
+    height: 14px;
+    background: rgba(50, 71, 92, 0.6);
+}
+
+.insertlinkicon {
+    width: 20px;
+    height: 10px;
+
+    background: rgba(50, 71, 92, 0.6);
+    transform: rotate(-45deg);
+}
+
+.viewlisticon {
+    width: 16px;
+    height: 12px;
+}
+
+.helpoutlineicon {
+    position: absolute;
+    left: 8.33%;
+    right: 8.33%;
+    top: 8.33%;
+    bottom: 8.33%;
+} */
+
+/* .table{
+    margin-right: 100px;
+} */
+
+.eira {
+    position: absolute;
+    /* margin-top: -95px; */
+    margin-top: -95px;
+    left: 140px;
+}
+
+/* .img{
+    
+} */
+
+.menu-icon {
+    position: absolute;
+    top: -80px;
+}
+
+.searchbarr {
+    position: absolute;
+    width: 450px;
+    height: 37px;
+    left: 205px;
+    top: 13px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+}
+
+.searchh {
+    position: absolute;
+    width: 250px;
+    height: 15px;
+    left: 40px;
+    top: 12px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 15px;
+    /* identical to box height */
+    color: #999999;
+}
+
+.search-iconn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.notifyy {
+    position: absolute;
+    left: 84.5%;
+    top: +18px
+}
+
+.darkmode {
+    position: absolute;
+    width: 24px;
+    height: 24.01px;
+    top: 18px;
+    left: 79.5%;
+}
+
+.edit {
+    position: absolute;
+    left: 82.5%;
+   margin-top: -87px;
+    color: #000000;
+}
+
+.user-namee {
+    position: absolute;
+    width: 150px;
+    height: 15px;
+    left: 1130px;
+    top: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    color: #000000;
+}
+
+.personn {
+    position: absolute;
+    left: 95%;
+    top: 3.13%;
+    bottom: 11.13%;
+}
+
+.icon {
+    position: relative;
+    right: 65.08%;
+    top: +150px;
+    /* Mono/Black  */
+}
+
+.main {
+    padding: 0px;
+    margin-top: +100px;
+    /* background: rgba(0, 74, 255, 0.12); */
+    /* width: 1440px;
+    height: 768px; */
+    /* background: #D9D9D9;  */
+    /* position: absolute; */
+}
+
+.accordian {
+    width: 1200px;
+    /* margin-left: 20px; */
+    font-family: 'Inter';
+    font-style: normal;
+    /* font-weight: 600; */
+    /* font-size: 16px; */
+    line-height: 19px;
+    margin-top: +20px;
+    /* align-items: center; */
+  
+}
+
+.text-align {
+    display: flex;
+    align-items: center;
+    /* margin-left: 75px; */
+    font-weight: 400;
+    line-height: 16px;
+    font-family: 'Inter';
+    font-style: normal;
+    margin-top: -80px;
+  
+}
+
+.text {
+    margin-left: 1%;
+    font-size: 18px;
+    margin-top: -30px;
+    font-family: inter;
+    font-style: normal;
+    line-height: 16px;
+}
+
+.accordian-text {
+    /* margin-top: 2%; */
+    display: flex;
+    /* position: relative; */
+    justify-content: space-evenly;
+}
+
+/* .site-details{
+    margin-right: 40px;
+} */
+
+.text-accordian {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+.accordian-t {
+    display: flex;
+
+    margin-top: 5%;
+}
+
+.insertlinkicon {
+    transform: rotate(-45deg);
+}
+
+.energy {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+
+.equ-name {
+    font-size: 16px;
+    font-family: 'inter';
+    font-style: normal;
+    font-weight: 500;
+    color: #1D1E22;
+   
+}
+
+.equipment {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    /* background: rgba(0, 74, 255, 0.12); */
+    height: 50px;
+}
+
+.section2 {
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+    margin-right: 4%;
+}
+
+
+.new {
+    margin-left: 5px;
+    border: none;
+    color: #004AFF;
+    /* font-size: 18px; */
+    background: rgba(0, 74, 255, 0.12);
+    border-radius: 50px;
+    font-weight: 500;
+    line-height: 14px;
+}
+
+.card-head {
+    margin-top: 2px;
+}
+
+.eqp-name {
+    justify-content: center;
+}
+
+.change {
+    margin-left: 280px;
+    margin-top: auto;
+}
+
+.count {
+    margin-left: 200px;
+}
+
+.next {
+    margin-left: 500px;
+}
+
+.table {
+    position: relative;
+    width: 955px;
+   
+    /* margin-right: 1000px; */
+}
+
+.helpoutlineicon {
+    margin-top: 30px;
+}
+
+.menuicon {
+    margin-top: 35px;
+}
+
+.linkicon {
+    margin-top: 35px;
+}
+
+.removeicon {
+    margin-top: 30px;
+}
+
+.barchart-icon {
+    margin-top: 30px;
+}
+
+.pie-icon {
+    margin-top: 25px;
+}
+
+.home-icon {
+    width: 150px;
+    margin-top: 30px;
+}
+
+.text-color {
+    color: #004AFF;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 16px;
+}
+
+.MuiToolbar-root,
+.MuiToolbar-gutters,
+.MuiToolbar-regular,
+.css-pjjt8i-MuiToolbar-root {
+    margin-bottom: -5% !important;
+}
+
+body {
+    /* background-color: rgb(224, 240, 240); */
+    background-color: rgb(230, 225, 225);
+    /* background: #E5E5E5; */
+}
+
+.MuiTablePagination-root,
+.css-jtlhu6-MuiTablePagination-root {
+    position: absolute !important;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 60%;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+    width: 450px;
+    right: 180px;
+}
+
+.MuiToolbar-regular {
+    margin-bottom: -5.5% !important;
+}
+.MuiBox-root .css-8atqhb{
+    margin-left:-20% !important
+}

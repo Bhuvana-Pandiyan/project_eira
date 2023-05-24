@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+}
+.chart-color{
+    background-color: white;
+}
+.botton-column{
+    display: flex;
+    margin-left: 640px;
+    justify-content: space-between;
+    margin-top: -50px;
+}
+/* .create-new{
+    margin-left: 100px;
+} */
+.cord-A{
+    margin-top: 30PX;
+   margin-right: 20PX;
+ 
+}
+.chart-set{
+    margin-left: 350px;
+    margin-top: -20PX;
+}
+/* .cord-B{
+    margin-left: 500PX;
+    margin-top: -400PX;
+} */
+.Add-new{
+    font-style: normal;
+font-weight: 500;
+font-size: 24px;
+margin-top: 20px;
+margin-left: 20px;
+text-decoration: none;
+color: black;
+}
+.box-add{
+    margin-top:40px;
+}
