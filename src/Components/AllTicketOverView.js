@@ -21,7 +21,7 @@ import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import { visuallyHidden } from '@mui/utils';
 import { Link } from 'react-router-dom';
 
-function createData(siteId,  priority, createdtime, category, assignedto, expectedtat,ticketCode , ticketType, actions) {
+function createData (siteId,  priority, createdtime, category, assignedto, expectedtat,ticketCode , ticketType, actions) {
   return {
     siteId,  priority, createdtime, category, assignedto, expectedtat,ticketCode ,ticketType, actions
   };
@@ -155,7 +155,7 @@ function EnhancedTableHead(props) {
   const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort ,ticketShow ,siteIdShow,priorityShow,createTimeShow,categoryShow,assignedShow,statusShow} =
     props;
 
-    let ticketCOde=ticketShow?'':'ticketCode'
+    let ticketCode=ticketShow?'':'ticketCode'
     let  siteIds=siteIdShow?'':'siteId'
     let  priorityId=priorityShow?'':'priority'
     let  createTimeId=createTimeShow?'':'createdTime'
@@ -163,7 +163,7 @@ function EnhancedTableHead(props) {
     let  assignedId=assignedShow?'':'assignedto'
     let  statusId=statusShow?'':'ticketType'
     let tableValue=headCells.map((data)=>{
-      if(data.id===ticketCOde){return{...data,active:false}}
+      if(data.id===ticketCode){return{...data,active:false}}
       else{
         return data
       }

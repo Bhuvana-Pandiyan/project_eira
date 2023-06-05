@@ -7,13 +7,17 @@ import AllAlert from './Components/AllAlert';
 import axios from 'axios';
 import Menuu from './Components/Menuu';
 import Eira from './Components/Eira';
-// import RoleList from './Components/RolesList';
+import RolesList from './Components/RolesList';
 import Sidebar from './Components/Sidebar';
 import Viewticket from './Components/ViewTicket';
 import Forgot from './Components/Forgot';
 
 // import './Eira.css';
 import Loginpage from './Components/Loginpage';
+import UserList from './Components/UserList';
+import AddRole from './Components/AddRole';
+import RoleMapping from './Components/RoleMapping';
+import MappingTab from './Components/MappingTab';
 
 function App() {
 
@@ -33,28 +37,28 @@ function App() {
   //       setGetValue(res.data)
   //     })
 
-    /*------ post ----- new data add ---*/
+  /*------ post ----- new data add ---*/
 
-    // let value={
-    //   name:'',
-    //   age:''
-    // }
-    // axios.post(`api`,value).then((res) => {
-    //   console.log(res.data);
-    //   getCall()
-    // }) 
+  // let value={
+  //   name:'',
+  //   age:''
+  // }
+  // axios.post(`api`,value).then((res) => {
+  //   console.log(res.data);
+  //   getCall()
+  // }) 
 
-    /*------put ------update  */
-    // axios.put(`api&id=${id}`,value).then((res) => {
-    //   console.log(res.data);
-    //   getCall()
-    // }) 
+  /*------put ------update  */
+  // axios.put(`api&id=${id}`,value).then((res) => {
+  //   console.log(res.data);
+  //   getCall()
+  // }) 
 
-    /*------delete ------delete  */
-    //    axios.delete(`api&id=${id}`,value).then((res) => {
-    //     console.log(res.data);
-    //     getCall()
-    //   })
+  /*------delete ------delete  */
+  //    axios.delete(`api&id=${id}`,value).then((res) => {
+  //     console.log(res.data);
+  //     getCall()
+  //   })
   // }
 
   // console.log(getValue, "getValue");
@@ -71,7 +75,11 @@ function App() {
           <Route path="/alltickets" element={<AllTickets />} />
           <Route path="/allticketoverview" element={<Sidebar />} />
           <Route path='/viewTicket' element={<Viewticket />} />
-          {/* <Route path='/rolelist' element={<RoleList />} /> */}
+          <Route path='/roleslist' element={<RolesList />} />
+          <Route path='/userlist' element={<UserList />} />
+          <Route path='/addrole' element={<AddRole />} />
+          <Route path='/roleMapping' element={<RoleMapping />} />
+          <Route path='/mapping' element={<MappingTab />} />
         </Routes>
       </Router>
     </div>

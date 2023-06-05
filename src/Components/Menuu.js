@@ -123,10 +123,26 @@ const Sidebar = () => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  // const handleNavigate = () => {
+  //   console.log("navigate")
+  //   navigate('/allticketoverview')
+  //   navigate('/rolelist')
+  //   console.log("nvigate");
+  // }
+
   const handleNavigate = () => {
-    console.log("navigate")
+    {console.log("navigate")
     navigate('/allticketoverview')
-    navigate('/rolelist')
+  }
+    {
+      console.log("navigate");
+      navigate('/roleslist')
+    }
+    // {
+    //   console.log("navigate");
+    //   navigate('/userlist')
+    // }
   }
 
   return (
@@ -216,7 +232,9 @@ const Sidebar = () => {
         </List>
         <List>
 
-          <ListItem disablePadding sx={{ display: 'block' }}>
+          {/* <ListItem disablePadding sx={{ display: 'block' }}> */}
+          <ListItem disablePadding sx={{ display: 'block' }}  onClick={handleNavigate}>
+
             <ListItemButton
               sx={{
                 minHeight: "0px",
@@ -234,7 +252,7 @@ const Sidebar = () => {
               >
                 <HiOutlineChartPie color="black" size="1.5rem" top="-40%" />
               </ListItemIcon>
-              <ListItemText primary="Circle" sx={{ opacity: open ? 1 : 0 }} />
+              <ListItemText primary="Users" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
           </ListItem>
 

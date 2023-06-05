@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Style.css'
 import axios from 'axios';
-
 import PropTypes from 'prop-types';
 import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -15,17 +14,12 @@ import TableRow from '@mui/material/TableRow';
 import TableSortLabel from '@mui/material/TableSortLabel';
 import Toolbar from '@mui/material/Toolbar';
 import { Typography } from '@mui/material';
-
 import Paper from '@mui/material/Paper';
-
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
-
 import { visuallyHidden } from '@mui/utils';
-
-
 
 function createData(equipmentname, equipmentid, customerfacing, equipmenttype, status, todayenergy, totalenergy, lastdatareceived) {
   return {
@@ -39,7 +33,6 @@ function createData(equipmentname, equipmentid, customerfacing, equipmenttype, s
     lastdatareceived,
   };
 }
-
 
 // const tableValues = [
 

@@ -119,7 +119,7 @@
 .edit {
     position: absolute;
     left: 82.5%;
-   margin-top: -87px;
+    margin-top: -87px;
     color: #000000;
 }
 
@@ -172,7 +172,7 @@
     line-height: 19px;
     margin-top: +20px;
     /* align-items: center; */
-  
+
 }
 
 .text-align {
@@ -184,7 +184,7 @@
     font-family: 'Inter';
     font-style: normal;
     margin-top: -80px;
-  
+
 }
 
 .text {
@@ -235,7 +235,7 @@
     font-style: normal;
     font-weight: 500;
     color: #1D1E22;
-   
+
 }
 
 .equipment {
@@ -289,7 +289,7 @@
 .table {
     position: relative;
     width: 955px;
-   
+
     /* margin-right: 1000px; */
 }
 
@@ -357,6 +357,181 @@ body {
 .MuiToolbar-regular {
     margin-bottom: -5.5% !important;
 }
-.MuiBox-root .css-8atqhb{
-    margin-left:-20% !important
+
+.MuiBox-root .css-8atqhb {
+    margin-left: -20% !important
+}
+.switch-icon{
+    margin-right: 50%;
+}
+.tabs{
+   
+}
+.permission{
+    margin-left: 30%;
+    margin-top: -105%;
+}
+.switch{
+    margin-left: 20%;
+    margin-top: 5%;
+
+}
+.switch-button {
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button1{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button2{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button3{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button4{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button5{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button5{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button6{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button7{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button8{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button9{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button10{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button11{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button12{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button13{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button14{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button15{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button16{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button17{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
+}
+.switch-button18{
+    margin-top: 1%;
+    background-color: rgb(29, 81, 29);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 34px;
 }

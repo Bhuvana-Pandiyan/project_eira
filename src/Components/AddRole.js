@@ -1,30 +1,20 @@
 import React from "react";
 import './Eira.css';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import SearchIcon from '@mui/icons-material/Search';
 import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import Modal from '@mui/material/Modal';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Button from '@mui/material/Button';
-
-import RoleListTab from "./RoleListTab";
 import Switch from '@mui/material/Switch';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import FormGroup from '@mui/material/FormGroup';
 import Stack from '@mui/material/Stack';
 import { Typography } from '@mui/material';
-import { MdOutlineSettings } from "react-icons/md";
-import AddRole from "./AddRole";
-import ViewTicket from "./ViewTicket";
 import { Link } from 'react-router-dom';
+import AddRoleTab from "./AddRoleTab";
 
-const RolesList = () => {
+const AddRole = () => {
   const [allticket, setAllticket] = React.useState(false)
 
   const [checked, setChecked] = React.useState(true)
@@ -122,14 +112,13 @@ const RolesList = () => {
           <ArrowBackIcon />
         </div>
         <div className="ticket-over">
-          Roles List <br />
+          <Typography>  Roles List <br />
           A role provided access to predefined menus and features so that depending
           on assigned role an administrator can have access to what they need.
+          </Typography>
         </div>
 
       </div>
-
-
 
       <div className="input">
 
@@ -146,7 +135,8 @@ const RolesList = () => {
         <div className="but">
           <div className="new-botton">
             <div className="new-text">
-              {<Link to='/AddRole'> <Typography style={{ color: "white" }}>ADD ROLE </Typography> </Link>}
+            {/* {<Link to ='/AddRole'> <Typography style={{color: "white", width: "260px"}}> ROLE MAPPING </Typography> </Link>} */}
+         <Typography > ROLE MAPPING </Typography>
             </div>
 
           </div>
@@ -154,7 +144,7 @@ const RolesList = () => {
 
         <div className="setting-icon">
           <div className='setting-dropdown'>
-
+           
             <Modal
               open={open}
               onClose={handleClose}
@@ -230,8 +220,7 @@ const RolesList = () => {
       </div>
 
       <div className="table-components">
-        <RoleListTab
-
+        <AddRoleTab
           roleIdShow={roleIdShow}
           roleNameShow={roleNameShow}
           roleDescriptionShow={roleDescriptionShow}
@@ -241,11 +230,11 @@ const RolesList = () => {
 
         />
       </div>
+      </div>
 
-    </div>
   );
 }
-export default RolesList;
+export default AddRole;
 
 
 

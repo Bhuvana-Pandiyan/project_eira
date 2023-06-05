@@ -13,7 +13,7 @@ import TableSortLabel from '@mui/material/TableSortLabel';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
-
+import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -21,38 +21,31 @@ import Switch from '@mui/material/Switch';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
-
-import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 
 
-function createData(roleid, rolename, roledescription, rolestatus, createddate, action) {
+function createData(userid, username, emailid, rolename, status, lastlogin, createdby, action) {
   return {
-    roleid,
+    userid,
+    username,
+    emailid,
     rolename,
-    roledescription,
-    rolestatus,
-    createddate,
+    status,
+    lastlogin,
+    createdby,
     action,
   };
 }
 
-// const rows = [
-//   createData('R12211', 'Admin', 'For Admin Users',  'Active', '09-02-2023 01:45 AM' ),
-//   createData('R12211', 'Monitoring', 'For Monitoring...',  'Active', '09-02-2023 01:45 AM'  ),
-//   createData('R12211', 'Portofolio Manager', '-',  'Active', '09-02-2023 01:45 AM',),
-//   createData('R12211', 'ICECTT', '-',  'In-Active', '09-02-2023 01:45 AM'),
-//   createData('R12211', 'Site Lead', 'To be use for..',  'Active', '09-02-2023 01:45 AM'),
-//   createData('R12211', 'Team Lead', 'Team Lead',  'Active', '09-02-2023 01:45 AM')
-// ];
-
 const rows = [
-  {"roleid":"R12211", "rolename": "Admin", "roledescription": "For Admin Users", "rolestatus": "Active", "createddate": "09-02-2023 01:45 AM" },
-  {"roleid":"R12211", "rolename": "Monitoring", "roledescription": "For Monitoring...", "rolestatus": "Active", "createddate": "09-02-2023 01:45 AM" },
-  {"roleid":"R12211", "rolename": "Portofolio Manager", "roledescription": "-", "rolestatus": "Active", "createddate": "09-02-2023 01:45 AM" },
-  {"roleid":"R12211", "rolename": "ICECTT", "roledescription": "-", "rolestatus": "In-Active", "createddate": "09-02-2023 01:45 AM" },
-  {"roleid":"R12211", "rolename": "Site Lead", "roledescription": "To be use for..", "rolestatus": "Active", "createddate": "09-02-2023 01:45 AM" },
-  {"roleid":"R12211", "rolename": "Team Lead", "roledescription": "Team Lead", "rolestatus": "Active", "createddate": "09-02-2023 01:45 AM" }
+  createData('U32423', 'asharma', 'abhimanyu@inspire.com', 'Admin', 'Active', '22-02-2023 01:12 PM', 'Abhimanyu', 'Inverter'),
+  createData('U32423', 'asharma', 'abhimanyu@inspire.com', 'Admin', 'Active', '22-02-2023 01:12 PM', 'Abhimanyu', 'Inverter'),
+  createData('U32423', 'asharma', 'abhimanyu@inspire.com', 'Admin', 'Active', '22-02-2023 01:12 PM', 'Abhimanyu', 'Inverter'),
+  createData('U32423', 'asharma', 'abhimanyu@inspire.com', 'Admin', 'Active', '22-02-2023 01:12 PM', 'Abhimanyu', 'Inverter'),
+  createData('U32423', 'asharma', 'abhimanyu@inspire.com', 'Admin', 'Active', '22-02-2023 01:12 PM', 'Abhimanyu', 'Inverter'),
+  createData('U32423', 'asharma', 'abhimanyu@inspire.com', 'Admin', 'Active', '22-02-2023 01:12 PM', 'Abhimanyu', 'Inverter'),
+  createData('U32423', 'asharma', 'abhimanyu@inspire.com', 'Admin', 'Active', '22-02-2023 01:12 PM', 'Abhimanyu', 'Inverter'),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -89,38 +82,49 @@ function stableSort(array, comparator) {
 
 const headCells = [
   {
-    id: 'roleid',
+    id: 'userid',
     numeric: false,
+    disablePadding: true,
+    label: 'User Id',
+  },
+  {
+    id: 'username',
+    numeric: true,
     disablePadding: false,
-    label: 'Role Id',
+    label: 'User Name',
+  },
+  {
+    id: 'emailid',
+    numeric: true,
+    disablePadding: false,
+    label: 'Email Id',
   },
   {
     id: 'rolename',
-    numeric: false,
+    numeric: true,
     disablePadding: false,
     label: 'Role Name',
   },
   {
-    id: 'roledescription',
-    numeric: false,
+    id: 'status',
+    numeric: true,
     disablePadding: false,
-    label: 'Role Description',
+    label: 'Status',
   },
   {
-    id: 'rolestatus',
-    numeric: false,
+    id: 'lastlogin',
+    numeric: true,
     disablePadding: false,
-    label: 'Role Status',
+    label: 'Last Login',
   },
   {
-    id: 'createddate',
-    numeric: false,
+    id: 'createdby',
+    numeric: true,
     disablePadding: false,
-    label: 'Created Date',
-  }, 
-  {
+    label: 'Created By',
+  }, {
     id: 'action',
-    numeric: false,
+    numeric: true,
     disablePadding: false,
     label: 'Action',
   },
@@ -136,12 +140,13 @@ function EnhancedTableHead(props) {
   return (
     <TableHead>
       <TableRow>
-       
+        <TableCell padding="checkbox" >
+        
+        </TableCell>
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-          align={'left'}
-          // align={headCell.numeric ? 'left' : 'left'}
+            align={headCell.numeric ? 'right' : 'left'}
             padding={headCell.disablePadding ? 'none' : 'normal'}
             sortDirection={orderBy === headCell.id ? order : false}
           >
@@ -226,7 +231,7 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-function RoleListTab() {
+function UserListTab() {
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('calories');
   const [selected, setSelected] = React.useState([]);
@@ -348,13 +353,14 @@ function RoleListTab() {
                     >
                       {row.name}
                     </TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px"}}>{row.roleid}</TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px" }}>{row.rolename}</TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px"}}>{row.roledescription}</TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px"}}>{row.rolestatus}</TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px"}}>{row.createddate}</TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px"}}>{row.action}</TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px" }} >< EditOutlinedIcon /> <DeleteOutlineIcon /> </TableCell>
+                    <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.userid}</TableCell>
+                    <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.username}</TableCell>
+                    <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.rolename}</TableCell>
+                    <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.status}</TableCell>
+                    <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.lastlogin}</TableCell>
+                    <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.createdby}</TableCell>
+                    <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.action}</TableCell>
+                    <TableCell style={{ textAlign: "center", fontSize: "14px" }} >< EditOutlinedIcon /> <DeleteOutlineIcon /> </TableCell>
                   </TableRow>
                 );
               })}
@@ -385,4 +391,4 @@ function RoleListTab() {
   );
 }
 
-export default RoleListTab;
+export default UserListTab;
