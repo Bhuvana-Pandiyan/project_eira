@@ -126,10 +126,7 @@ const RolesList = () => {
           A role provided access to predefined menus and features so that depending
           on assigned role an administrator can have access to what they need.
         </div>
-
       </div>
-
-
 
       <div className="input">
 

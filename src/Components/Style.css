@@ -592,21 +592,17 @@ body {
 }
 
 .mains {
-
     /* Styles for mobile screens (up to 767px) */
     @media (max-width: 767px) {
-        background-color: gray;
+        /* background-color: rgb(188, 230, 246); */
+        background-color: rgb(209, 205, 205);
     }
 
     /* Styles for laptop screens (768px and above) */
     @media (min-width: 768px) {
-        background-color: rgb(212, 209, 209);
+        background-color: rgb(209, 205, 205);
     }
-}
-
-h1 {
-    color: white;
-    color: #b2b39f;
+  
 }
 
 /* @media (max-width: 600px) {
@@ -616,3 +612,35 @@ h1 {
       max-height: 300px;
     }
   }  */
+
+  .pagination{
+    @media screen and (min-width: 1020px) {
+        .pagination {
+            margin-right: 1%;
+        }
+    }
+    
+    @media screen and (min-width: 1440px) {
+        .pagination {
+            margin-right: 2%;
+        }
+    }
+    
+    @media screen and (min-width: 1600px) {
+        .pagination {
+            margin-right: 3%;
+        }
+    }
+    
+    @media screen and (min-width: 1920px) {
+        .pagination {
+            margin-right: 5.2%;
+        }
+    }
+    
+    @media screen and (min-width: 2560px) {
+        .pagination {
+            margin-right: 5.8%;
+        }
+  }
+}

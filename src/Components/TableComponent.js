@@ -252,6 +252,9 @@ function TableComponent() {
   const [orderBy, setOrderBy] = React.useState('equipmentID');
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(1);
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPage, setRows] = React.useState([]);
+  
   const [dense, setDense] = React.useState(false);
   const [tableValuesPerPage, settableValuesPerPage] = React.useState(5);
 
@@ -393,6 +396,7 @@ function TableComponent() {
           </Table>
         </TableContainer>
       </Paper>
+      {/* <div className='pagination'>
       <TablePagination
         tableValuesPerPageOptions={[5, 10, 25]}
         component="div"
@@ -402,15 +406,18 @@ function TableComponent() {
         onPageChange={handleChangePage}
         ontableValuesPerPageChange={handleChangetableValuesPerPage}
       />
-      {/* <TablePagination
+      </div> */}
+      <div className='pagination'>
+      <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           count={rowsPage.length}
           rowsPerPage={rowsPerPage}
           page={page}
           component='div'
           onPageChange={handleChangePage}
-          onRowsPerPageChange={(e)=>handleChangeRowsPerPage(e)}
-        /> */}
+          onRowsPerPageChange={(e)=>handleChangePage(e)}
+        />
+        </div>
 
     </Box>
 

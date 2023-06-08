@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react';
+import './Eira.css';
 import PropTypes from 'prop-types';
 import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -212,7 +213,7 @@ function EnhancedTableHead(props) {
   let headcells = tableValue.filter((data) => { return data.active === true })
   console.log(headcells, 'headcells');
   return (
-   
+    // <div className='alltkctov'>
       <TableHead >
         <TableRow  >
 
@@ -241,37 +242,38 @@ function EnhancedTableHead(props) {
           ))}
         </TableRow>
       </TableHead>
-    
-      );
-     
+      // </div> 
+
+  );
+
 }
 
-      EnhancedTableHead.propTypes = {
-        numSelected: PropTypes.number.isRequired,
-      onRequestSort: PropTypes.func.isRequired,
-      onSelectAllClick: PropTypes.func.isRequired,
-      order: PropTypes.oneOf(['asc', 'desc']).isRequired,
-      orderBy: PropTypes.string.isRequired,
-      rowCount: PropTypes.number.isRequired,
+EnhancedTableHead.propTypes = {
+  numSelected: PropTypes.number.isRequired,
+  onRequestSort: PropTypes.func.isRequired,
+  onSelectAllClick: PropTypes.func.isRequired,
+  order: PropTypes.oneOf(['asc', 'desc']).isRequired,
+  orderBy: PropTypes.string.isRequired,
+  rowCount: PropTypes.number.isRequired,
 };
 
-      function EnhancedTableToolbar(props) {
-  const {numSelected} = props;
+function EnhancedTableToolbar(props) {
+  const { numSelected } = props;
 
-      return (
-      <Toolbar
-        sx={{
+  return (
+    <Toolbar
+      sx={{
 
-          pl: { sm: 2 },
-          pr: { xs: 1, sm: 1 },
-          ...(numSelected > 0 && {
-            bgcolor: (theme) =>
-              alpha(theme.palette.primary.main, theme.palette.action.activatedOpacity),
-          }),
-        }}
-      >
+        pl: { sm: 2 },
+        pr: { xs: 1, sm: 1 },
+        ...(numSelected > 0 && {
+          bgcolor: (theme) =>
+            alpha(theme.palette.primary.main, theme.palette.action.activatedOpacity),
+        }),
+      }}
+    >
 
-        {/* 
+      {/* 
 {numSelected > 0 ? (
 <Tooltip title="Delete">
 </Tooltip>
@@ -280,84 +282,84 @@ function EnhancedTableHead(props) {
 {/* <IconButton />
 </Tooltip>
 )} */}
-      </Toolbar>
-      );
+    </Toolbar>
+  );
 }
 
-      EnhancedTableToolbar.propTypes = {
-        numSelected: PropTypes.number.isRequired,
+EnhancedTableToolbar.propTypes = {
+  numSelected: PropTypes.number.isRequired,
 };
 
-      function AllTicketOverView(props) {
-  const {operationtickets, ticketShow, siteIdShow, priorityShow, createTimeShow, categoryShow, assignedShow, statusShow} = props
-      const [order, setOrder] = React.useState('asc');
-      const [orderBy, setOrderBy] = React.useState('calories');
-      const [selected, setSelected] = React.useState([]);
-      const [page, setPage] = React.useState(0);
-      const [dense, setDense] = React.useState(false);
-      const [rowsPerPage, setRowsPerPage] = React.useState(5);
-      const [rowsPage, setRows] = React.useState([]);
-//   {"siteNo": 20393831, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "in Progress" },
-// const [tableValues,setTables]=React.useState([])
+function AllTicketOverView(props) {
+  const { operationtickets, ticketShow, siteIdShow, priorityShow, createTimeShow, categoryShow, assignedShow, statusShow } = props
+  const [order, setOrder] = React.useState('asc');
+  const [orderBy, setOrderBy] = React.useState('calories');
+  const [selected, setSelected] = React.useState([]);
+  const [page, setPage] = React.useState(0);
+  const [dense, setDense] = React.useState(false);
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPage, setRows] = React.useState([]);
+  //   {"siteNo": 20393831, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "in Progress" },
+  // const [tableValues,setTables]=React.useState([])
 
-//    useEffect(()=>{
-//       getcall();
-//    },[])
+  //    useEffect(()=>{
+  //       getcall();
+  //    },[])
 
 
-//    const getcall =()=>{
-//       axios.get(`http://inspirece.com/eiramobileservice/rest/ticketservice/tickets/userid=&timezoneoffset=330`).then((res)=>{
+  //    const getcall =()=>{
+  //       axios.get(`http://inspirece.com/eiramobileservice/rest/ticketservice/tickets/userid=&timezoneoffset=330`).then((res)=>{
 
-//         if(res.ticketType===200){
-//          console.log(res.data,'res');
-//          setTables(res.data)
-//         }
-//       })
-//    }
-const [tableValues,setTables]=React.useState([])
+  //         if(res.ticketType===200){
+  //          console.log(res.data,'res');
+  //          setTables(res.data)
+  //         }
+  //       })
+  //    }
+  const [tableValues, setTables] = React.useState([])
 
-   useEffect(()=>{
-        getCall();
-   },[])
+  useEffect(() => {
+    getCall();
+  }, [])
 
   useEffect(() => {
     if (operationtickets === "operationTicket") {
-        setRows(tableValues.filter((data) => { return data.ticketType.includes("Operation") }))
-      }
-      else if (operationtickets === "maintainceTicket") {
-        setRows(tableValues.filter((data) => { return data.ticketType.includes("Maintenance") }))
-      }
-      else if (operationtickets === "parkedTicket") {
-        setRows(tableValues.filter((data) => { return data.ticketType.includes("in Pending") }))
-      }
-      else if (operationtickets === "openTicket") {
-        setRows(tableValues.filter((data) => { return data.ticketType.includes("Closed") }))
-      }
-      else if (operationtickets === ""  || operationtickets === undefined ) {
-        setRows(tableValues)
-      }
-
-    
-
-  }, [props.operationtickets,tableValues])
+      setRows(tableValues.filter((data) => { return data.ticketType.includes("Operation") }))
+    }
+    else if (operationtickets === "maintainceTicket") {
+      setRows(tableValues.filter((data) => { return data.ticketType.includes("Maintenance") }))
+    }
+    else if (operationtickets === "parkedTicket") {
+      setRows(tableValues.filter((data) => { return data.ticketType.includes("in Pending") }))
+    }
+    else if (operationtickets === "openTicket") {
+      setRows(tableValues.filter((data) => { return data.ticketType.includes("Closed") }))
+    }
+    else if (operationtickets === "" || operationtickets === undefined) {
+      setRows(tableValues)
+    }
 
 
 
-  const getCall=()=>{
-        axios.get(`http://inspirece.com/eiramobileservice/rest/ticketservice/tickets/userid=852&timezoneoffset=330`).then((res) => {
-          if (res.status === 200) {
-            console.log(res.data, 'res');
-            let data = res.data.filter((data) => { return data.siteId !== null })
-            setTables(data)
-          }
-        })
+  }, [props.operationtickets, tableValues])
+
+
+
+  const getCall = () => {
+    axios.get(`http://inspirece.com/eiramobileservice/rest/ticketservice/tickets/userid=852&timezoneoffset=330`).then((res) => {
+      if (res.status === 200) {
+        console.log(res.data, 'res');
+        let data = res.data.filter((data) => { return data.siteId !== null })
+        setTables(data)
       }
-      console.log(rowsPage);
+    })
+  }
+  console.log(rowsPage);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
-      setOrder(isAsc ? 'desc' : 'asc');
-      setOrderBy(property);
+    setOrder(isAsc ? 'desc' : 'asc');
+    setOrderBy(property);
   };
 
   const handleSelectAllClick = (event) => {
@@ -366,129 +368,135 @@ const [tableValues,setTables]=React.useState([])
       setSelected(newSelected);
       return;
     }
-      setSelected();
+    setSelected();
   };
 
-      console.log(props);
+  console.log(props);
   const handleClick = (event, siteNo) => {
     const selectedIndex = selected.indexOf(siteNo);
-      let newSelected = [];
+    let newSelected = [];
 
-      if (selectedIndex === -1) {
-        newSelected = newSelected.concat(selected, siteNo);
+    if (selectedIndex === -1) {
+      newSelected = newSelected.concat(selected, siteNo);
     } else if (selectedIndex === 0) {
-        newSelected = newSelected.concat(selected.slice(1));
+      newSelected = newSelected.concat(selected.slice(1));
     } else if (selectedIndex === selected.length - 1) {
-        newSelected = newSelected.concat(selected.slice(0, -1));
+      newSelected = newSelected.concat(selected.slice(0, -1));
     } else if (selectedIndex > 0) {
-        newSelected = newSelected.concat(
-          selected.slice(0, selectedIndex),
-          selected.slice(selectedIndex + 1),
-        );
+      newSelected = newSelected.concat(
+        selected.slice(0, selectedIndex),
+        selected.slice(selectedIndex + 1),
+      );
     }
 
-      setSelected(newSelected);
+    setSelected(newSelected);
   };
 
   const handleChangePage = (event, newPage) => {
-        setPage(newPage);
+    setPage(newPage);
   };
 
   const handleChangeRowsPerPage = (e) => {
 
-        setRowsPerPage(parseInt(e.target.value));
-   
+    setRowsPerPage(parseInt(e.target.value));
+
   };
 
   const handleChangeDense = (event) => {
-        setDense(event.target.checked);
+    setDense(event.target.checked);
   };
 
   const isSelected = (siteNo) => selected.indexOf(siteNo) !== -1;
 
 
-      const emptyRows =
+  const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - tableValues.length) : 0;
 
-      return (
-      <Box >
-        <Paper sx={{ width: '100%' }}>
-          <EnhancedTableToolbar numSelected={selected.length} />
-          <TableContainer>
-            <Table
-              sx={{ minWidth: 750 }}
-              aria-labelledby="tableTitle"
-            // size={dense ? 'small' : 'medium'}
-            >
-              <EnhancedTableHead
-                ticketShow={ticketShow}
-                siteIdShow={siteIdShow}
-                priorityShow={priorityShow}
-                createTimeShow={createTimeShow}
-                categoryShow={categoryShow}
-                assignedShow={assignedShow}
-                statusShow={statusShow}
-                numSelected={selected.length}
-                order={order}
-                orderBy={orderBy}
-                onSelectAllClick={handleSelectAllClick}
-                onRequestSort={handleRequestSort}
-                rowCount={tableValues.length}
-              />
+  return (
+    // <div className='alltkctov'>
+    <Box >
+      <Paper sx={{ width: '100%' }}>
+        <EnhancedTableToolbar numSelected={selected.length} />
+        <TableContainer>
+          <Table
+            sx={{ minWidth: 750 }}
+            aria-labelledby="tableTitle"
+          // size={dense ? 'small' : 'medium'}
+          >
+            <EnhancedTableHead
+              ticketShow={ticketShow}
+              siteIdShow={siteIdShow}
+              priorityShow={priorityShow}
+              createTimeShow={createTimeShow}
+              categoryShow={categoryShow}
+              assignedShow={assignedShow}
+              statusShow={statusShow}
+              numSelected={selected.length}
+              order={order}
+              orderBy={orderBy}
+              onSelectAllClick={handleSelectAllClick}
+              onRequestSort={handleRequestSort}
+              rowCount={tableValues.length}
+            />
+            {/* <div className=''> */}
+            <TableBody>
+              {stableSort(rowsPage, getComparator(order, orderBy))
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                .map((row, index) => {
+                  const isItemSelected = isSelected(row.siteNo);
+                  const labelId = `enhanced-table-checkbox-${index}`;
 
-              <TableBody>
-                {stableSort(rowsPage, getComparator(order, orderBy))
-                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map((row, index) => {
-                    const isItemSelected = isSelected(row.siteNo);
-                    const labelId = `enhanced-table-checkbox-${index}`;
+                  return (
 
-                    return (
+                    <TableRow
+                      hover
+                      onClick={(event) => handleClick(event, row.sitename)}
+                      aria-checked={isItemSelected}
+                      tabIndex={-1}
+                      key={row.siteNo}
+                      selected={isItemSelected}
+                      sx={{ cursor: 'pointer' }}
+                    >
+                      {<Link to='/viewTicket'> {ticketShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }} >{row.ticketCode}</TableCell>}</Link>}
+                      {siteIdShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.siteId}</TableCell>}
+                      {priorityShow && <TableCell style={{ textAlign: "center", fontSize: "14px", marginLeft: "-10px !importan" }}>{row.priority}</TableCell>}
+                      {createTimeShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.createdDate}</TableCell>}
+                      {categoryShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.category}</TableCell>}
+                      {assignedShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.assignedto}</TableCell>}
+                      {statusShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }} >{row.ticketType}</TableCell>}
+                      <TableCell style={{ textAlign: "center", fontSize: "14px" }} >< EditOutlinedIcon /> <PermIdentityIcon /><CheckCircleOutlineOutlinedIcon /></TableCell>
 
-                      <TableRow
-                        hover
-                        onClick={(event) => handleClick(event, row.sitename)}
-                        aria-checked={isItemSelected}
-                        tabIndex={-1}
-                        key={row.siteNo}
-                        selected={isItemSelected}
-                        sx={{ cursor: 'pointer' }}
-                      >
-                        {<Link to='/viewTicket'> {ticketShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }} >{row.ticketCode}</TableCell>}</Link>}
-                        {siteIdShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.siteId}</TableCell>}
-                        {priorityShow && <TableCell style={{ textAlign: "center", fontSize: "14px", marginLeft: "-10px !importan" }}>{row.priority}</TableCell>}
-                        {createTimeShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.createdDate}</TableCell>}
-                        {categoryShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.category}</TableCell>}
-                        {assignedShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.assignedto}</TableCell>}
-                        {statusShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }} >{row.ticketType}</TableCell>}
-                        <TableCell style={{ textAlign: "center", fontSize: "14px" }} >< EditOutlinedIcon /> <PermIdentityIcon /><CheckCircleOutlineOutlinedIcon /></TableCell>
+                    </TableRow>
 
-                      </TableRow>
+                  );
+                })}
+              {emptyRows > 0 && (
+                <TableRow
 
-                    );
-                  })}
-                {emptyRows > 0 && (
-                  <TableRow
+                >
+                  <TableCell colSpan={6} />
+                </TableRow>
+              )}
+            </TableBody>
+            {/* </div> */}
 
-                  >
-                    <TableCell colSpan={6} />
-                  </TableRow>
-                )}
-              </TableBody>
+          </Table>
 
-            </Table>
-
-          </TableContainer>
-        </Paper>
-        <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
-          count={rowsPage.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          component='div'
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={(e) => handleChangeRowsPerPage(e)}
-        /> </Box>
-      )
+        </TableContainer>
+      </Paper>
+<div className='pagination'>
+      <TablePagination
+        rowsPerPageOptions={[5, 10, 25]}
+        count={rowsPage.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        component='div'
+        onPageChange={handleChangePage}
+        onRowsPerPageChange={(e) => handleChangeRowsPerPage(e)}
+      />
+      </div>
+    </Box>
+    // </div>
+  )
 }
-      export default AllTicketOverView;
+export default AllTicketOverView;

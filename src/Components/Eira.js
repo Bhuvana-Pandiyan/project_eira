@@ -130,12 +130,12 @@ const Eira = () => {
     <div className="mee">
       {/* <div className="c"> */}
 
-        <div className="arrow-icon">
-          <ArrowBackIcon />
-        </div>
-        <div className="ticket-over">
-          Ticket overview
-        </div>
+      <div className="arrow-icon">
+        <ArrowBackIcon />
+      </div>
+      <div className="ticket-over">
+        Ticket overview
+      </div>
 
       {/* </div> */}
 
@@ -146,7 +146,6 @@ const Eira = () => {
 
             <Navbar.Collapse >
               <Nav >
-
                 <div className="allticket">
                   <span onClick={TicketCall}>AllTicket</span>
                 </div>
@@ -189,7 +188,7 @@ const Eira = () => {
           </div>
         </div>
 
-        <div className="but">
+        <div className="but" >
           <div className="new-botton">
             <div className="new-text">
               New Ticket

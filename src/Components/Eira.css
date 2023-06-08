@@ -174,12 +174,12 @@
     margin-top: -20px;
 }
 
+
 .input {
     position: relative;
     background: #F2F2F2;
-    width: 103%;
+    width: 100%;
     height: 64px;
-    right: 23px;
     margin-top: +20px;
 }
 
@@ -236,6 +236,10 @@
     margin-top: -55px;
 }
 
+.but{
+    position: relative;
+}
+
 .box-typo {
     margin-top: -150px !important;
     /* margin-top: -150px; */
@@ -257,9 +261,9 @@
 }
 
 .table-components {
-    margin-left: -16px;
+  
     width: 100%;
-    margin-top: -5px;
+    margin-top: -3px;
 }
 
 /* .MuiTablePagination-root,
@@ -451,7 +455,8 @@ margin-top: 10px !important;
     
     /* Styles for mobile screens (up to 767px) */
     @media (max-width: 767px) {
-      background-color: gray;
+      background-color: rgb(216, 242, 252);
+      /* background-color: rgb(209, 205, 205); */
     }
   
     /* Styles for laptop screens (768px and above) */
@@ -459,9 +464,113 @@ margin-top: 10px !important;
       background-color: rgb(212, 209, 209);
     }
   }
-  
-  h1 {
-    color: rgb(222, 211, 211);
+
+  .mee {
+    @media screen and (min-width: 1020px) {
+        .mee {
+            margin-right: 1%;
+        }
+    }
+    
+    @media screen and (min-width: 1440px) {
+        .mee {
+            margin-right: 2%;
+        }
+    }
+    
+    @media screen and (min-width: 1600px) {
+        .mee {
+            margin-right: 3%;
+        }
+    }
+    
+    @media screen and (min-width: 1920px) {
+        .mee {
+            margin-right: 5.2%;
+        }
+    }
+    
+    @media screen and (min-width: 2560px) {
+        .mee {
+            margin-right: 5.8%;
+        }
+    }
   }
+
+  .alltkctov{
+    @media screen and (min-width: 1020px) {
+        .alltkctov {
+            margin-right: 1%;
+        }
+    }
+    
+    @media screen and (min-width: 1440px) {
+        .alltkctov {
+            margin-right: 2%;
+        }
+    }
+    
+    @media screen and (min-width: 1600px) {
+        .alltkctov {
+            margin-right: 3%;
+        }
+    }
+    
+    @media screen and (min-width: 1920px) {
+        .alltkctov {
+            margin-right: 5.2%;
+        }
+    }
+    
+    @media screen and (min-width: 2560px) {
+        .alltkctov {
+            margin-right: 5.8%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        background-color: rgb(216, 242, 252);
+        /* background-color: rgb(209, 205, 205); */
+      }
+    
+      /* Styles for laptop screens (768px and above) */
+      @media (min-width: 768px) {
+        background-color: rgb(212, 209, 209);
+      }
+  }
+
+  .pagination{
+    @media screen and (min-width: 1020px) {
+        .pagination {
+            margin-right: 1%;
+        }
+    }
+    
+    @media screen and (min-width: 1440px) {
+        .pagination {
+            margin-right: 2%;
+        }
+    }
+    
+    @media screen and (min-width: 1600px) {
+        .pagination {
+            margin-right: 3%;
+        }
+    }
+    
+    @media screen and (min-width: 1920px) {
+        .pagination {
+            margin-right: 5.2%;
+        }
+    }
+    
+    @media screen and (min-width: 2560px) {
+        .pagination {
+            margin-right: 5.8%;
+        }
+  }
+}
+
+ 
  
 
