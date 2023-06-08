@@ -109,15 +109,15 @@ const ViewTicket = () => {
 
                                         </div>
                                         <div className='select-option'>
-                                            <p style={{ color: "#B5B5B5", backgroundColor: "none" }}>Select</p>
-                                            <select value={Select} onChange={e => setSelect(e.target.value)} style={{ width: "200px", height: "40px", marginTop: "-20px" }}>
+                                            <p style={{ color: "#B5B5B5", backgroundColor: "none", marginTop: "-3%" }}>Select</p>
+                                            <select value={Select} onChange={e => setSelect(e.target.value)} style={{ width: "200px", height: "40px", marginTop: "10px" }}>
                                                 <option>select user</option>
                                                 <option>select all</option>
                                                 <option>select ticket</option>
                                             </select>
                                         </div>
                                         <div className="enter-reason">
-                                            <p style={{ color: "#B5B5B5" }}>Enter reason</p>
+                                           <div> <p style={{ color: "#B5B5B5" }}>Enter reason</p>  </div>
                                             <Box
                                                 component="form"
                                                 sx={{
@@ -125,9 +125,8 @@ const ViewTicket = () => {
                                                 }}
                                                 noValidate
                                                 autoComplete="off"
-
                                             >
-                                                <TextField variant="outlined" placeholder='Enter reason' style={{ marginTop: "-7px" }} />
+                                                <TextField variant="outlined" placeholder='Enter reason' style={{ marginTop: "5px" }} />
                                             </Box>
                                             <div>
                                             </div>

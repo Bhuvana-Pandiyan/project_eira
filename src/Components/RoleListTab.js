@@ -27,7 +27,9 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 
 function createData(roleid, rolename, roledescription, rolestatus, createddate, action) {
+
   return {
+    
     roleid,
     rolename,
     roledescription,
@@ -47,12 +49,12 @@ function createData(roleid, rolename, roledescription, rolestatus, createddate, 
 // ];
 
 const rows = [
-  {"roleid":"R12211", "rolename": "Admin", "roledescription": "For Admin Users", "rolestatus": "Active", "createddate": "09-02-2023 01:45 AM" },
-  {"roleid":"R12211", "rolename": "Monitoring", "roledescription": "For Monitoring...", "rolestatus": "Active", "createddate": "09-02-2023 01:45 AM" },
-  {"roleid":"R12211", "rolename": "Portofolio Manager", "roledescription": "-", "rolestatus": "Active", "createddate": "09-02-2023 01:45 AM" },
-  {"roleid":"R12211", "rolename": "ICECTT", "roledescription": "-", "rolestatus": "In-Active", "createddate": "09-02-2023 01:45 AM" },
-  {"roleid":"R12211", "rolename": "Site Lead", "roledescription": "To be use for..", "rolestatus": "Active", "createddate": "09-02-2023 01:45 AM" },
-  {"roleid":"R12211", "rolename": "Team Lead", "roledescription": "Team Lead", "rolestatus": "Active", "createddate": "09-02-2023 01:45 AM" }
+  { "roleid": "R12211", "rolename": "Admin", "roledescription": "For Admin Users", "rolestatus": "Active", "createddate": "09-02-2023 01:45 AM" },
+  { "roleid": "R12211", "rolename": "Monitoring", "roledescription": "For Monitoring...", "rolestatus": "Active", "createddate": "09-02-2023 01:45 AM" },
+  { "roleid": "R12211", "rolename": "Portofolio Manager", "roledescription": "-", "rolestatus": "Active", "createddate": "09-02-2023 01:45 AM" },
+  { "roleid": "R12211", "rolename": "ICECTT", "roledescription": "-", "rolestatus": "In-Active", "createddate": "09-02-2023 01:45 AM" },
+  { "roleid": "R12211", "rolename": "Site Lead", "roledescription": "To be use for..", "rolestatus": "Active", "createddate": "09-02-2023 01:45 AM" },
+  { "roleid": "R12211", "rolename": "Team Lead", "roledescription": "Team Lead", "rolestatus": "Active", "createddate": "09-02-2023 01:45 AM" }
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -117,7 +119,7 @@ const headCells = [
     numeric: false,
     disablePadding: false,
     label: 'Created Date',
-  }, 
+  },
   {
     id: 'action',
     numeric: false,
@@ -136,12 +138,12 @@ function EnhancedTableHead(props) {
   return (
     <TableHead>
       <TableRow>
-       
+
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-          align={'left'}
-          // align={headCell.numeric ? 'left' : 'left'}
+            align={'left'}
+            // align={headCell.numeric ? 'left' : 'left'}
             padding={headCell.disablePadding ? 'none' : 'normal'}
             sortDirection={orderBy === headCell.id ? order : false}
           >
@@ -177,6 +179,7 @@ function EnhancedTableToolbar(props) {
   const { numSelected } = props;
 
   return (
+
     <Toolbar
       sx={{
         pl: { sm: 2 },
@@ -219,6 +222,7 @@ function EnhancedTableToolbar(props) {
 
       )}
     </Toolbar>
+
   );
 }
 
@@ -348,12 +352,12 @@ function RoleListTab() {
                     >
                       {row.name}
                     </TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px"}}>{row.roleid}</TableCell>
+                    <TableCell style={{ align: "left", fontSize: "14px" }}>{row.roleid}</TableCell>
                     <TableCell style={{ align: "left", fontSize: "14px" }}>{row.rolename}</TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px"}}>{row.roledescription}</TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px"}}>{row.rolestatus}</TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px"}}>{row.createddate}</TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px"}}>{row.action}</TableCell>
+                    <TableCell style={{ align: "left", fontSize: "14px" }}>{row.roledescription}</TableCell>
+                    <TableCell style={{ align: "left", fontSize: "14px" }}>{row.rolestatus}</TableCell>
+                    <TableCell style={{ align: "left", fontSize: "14px" }}>{row.createddate}</TableCell>
+                    <TableCell style={{ align: "left", fontSize: "14px" }}>{row.action}</TableCell>
                     <TableCell style={{ align: "left", fontSize: "14px" }} >< EditOutlinedIcon /> <DeleteOutlineIcon /> </TableCell>
                   </TableRow>
                 );
@@ -383,6 +387,7 @@ function RoleListTab() {
 
     </Box>
   );
+
 }
 
 export default RoleListTab;

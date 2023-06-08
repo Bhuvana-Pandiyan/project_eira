@@ -45,12 +45,15 @@ function createData(rolename, accesspages, edit) {
 // ];
 
 const rows = [
-    { "rolename": "Admin", "accesspages": "For Admin Users", "edit": "Active", },
-    { "rolename": "Monitoring", "accesspages": "For Monitoring...", "edit": "Active", },
-    { "rolename": "Portofolio Manager", "accesspages": "-", "edit": "Active", },
-    { "rolename": "ICECTT", "accesspages": "-", "edit": "In-Active", },
-    { "rolename": "Site Lead", "accesspages": "To be use for..", "edit": "Active", },
-    { "rolename": "Team Lead", "accesspages": "Team Lead", "edit": "Active", }
+    { "rolename": "ApplicationTester", "accesspages": "Dashboard,CustomerView,SiteView,Tickets,New Ticket" },
+    { "rolename": "EIRAAssetManagement", "accesspages": "Dashboard,SiteView,Tickets,Events,New Ticket,Analysis,Documents Upload,Documents Download,Reports" },
+    { "rolename": "EIRACustomer	", "accesspages": "Dashboard,SiteView,Tickets,Events,Analysis,Documents Download,Reports"},
+    { "rolename": "EIRATicketing	", "accesspages": "Dashboard,Tickets,New Ticket,Documents Upload,Documents Download" },
+    { "rolename": "EndCustomer", "accesspages": "Dashboard,SiteView,Events,Analysis,User Configuration" },
+    { "rolename": "ICEAdmin", "accesspages": "Dashboard,CustomerView,SiteView,Tickets,Events,New Ticket,Analysis,Documents Upload,Documents Download,Reports,Customer Configuration,Site Configuration,Equipment Configuration,StandardParameter Configuration,Master Upload,User Configuration"},
+    { "rolename": "Monitoring", "accesspages": "Dashboard,SiteView,Events,Analysis" },
+    { "rolename": "Site Lead", "accesspages": "	Dashboard,Tickets,Reports"},
+    { "rolename": "Superadmin", "accesspages": "Team Lead" }
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -190,7 +193,7 @@ function EnhancedTableToolbar(props) {
             )}
 
             {numSelected > 0 ? (
-                <Tooltip title="Delete">
+                <Tooltip title="">
                 </Tooltip>
             ) : (
                 <Tooltip title="Filter list">
@@ -335,7 +338,7 @@ function MappingTab() {
                                         <TableCell style={{ align: "left", fontSize: "14px" }}>{row.accesspages}</TableCell>
                                         <TableCell style={{ align: "left", fontSize: "14px" }}>{row.edit}</TableCell>
 
-                                        <TableCell style={{ align: "left", fontSize: "14px" }} >< EditOutlinedIcon /> <DeleteOutlineIcon /> </TableCell>
+                                        <TableCell style={{ align: "left", fontSize: "14px" }} >< EditOutlinedIcon />  </TableCell>
                                     </TableRow>
                                 );
                             })}

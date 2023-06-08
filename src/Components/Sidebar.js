@@ -39,6 +39,24 @@ import Siteoverview from './Siteoverview';
 import ViewTicket from './ViewTicket';
 import { useNavigate } from 'react-router-dom';
 
+// import React, { createContext, useState } from 'react';
+
+// export const SidebarContext = createContext();
+
+// export const SidebarProvider = ({ children }) => {
+//   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+//   const toggleSidebar = () => {
+//     setIsSidebarOpen(!isSidebarOpen);
+//   };
+
+//   return (
+//     <SidebarContext.Provider value={{ isSidebarOpen, toggleSidebar }}>
+//       {children}
+//     </SidebarContext.Provider>
+//   );
+// };
+
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({

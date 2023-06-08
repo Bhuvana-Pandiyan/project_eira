@@ -22,7 +22,9 @@ import Switch from '@mui/material/Switch';
 import { visuallyHidden } from '@mui/utils';
 
 function createData(equipmentname, equipmentid, customerfacing, equipmenttype, status, todayenergy, totalenergy, lastdatareceived) {
+
   return {
+
     equipmentname,
     equipmentid,
     customerfacing,
@@ -40,7 +42,6 @@ function createData(equipmentname, equipmentid, customerfacing, equipmenttype, s
 //     "equipmentname": "SE00200EQ004", "equipmentid": "EQ1234", "customerfacing": "India foods", "equipmenttype": "Inverter", "status": "Active",
 //     "todayenergy": "Inverter", "totalenergy": "Inverter", "lastdatareceived": "Inverter"
 //   },
-
 //   {
 //     "equipmentname": "SE00200EQ004", "equipmentid": "EQ1234", "customerfacing": "India Foods", "equipmenttype": "Inverter", "status": "Active",
 //     "todayenergy": "Inverter", "totalenergy": "Inverter", "lastdatareceived": "Inverter"
@@ -196,6 +197,7 @@ function EnhancedTableToolbar(props) {
   const { numSelected } = props;
 
   return (
+
     <Toolbar
       sx={{
         pl: { sm: 2 },
@@ -266,7 +268,7 @@ function TableComponent() {
         console.log(res.data, 'res');
         setTables(res.data)
       }
-    }) 
+    })
   }
 
   const handleRequestSort = (event, property) => {
@@ -342,51 +344,52 @@ function TableComponent() {
               onRequestSort={handleRequestSort}
               rowCount={tableValues.length}
             />
+            {/* <div className='sitetab'> */}
+              <TableBody>
+                {stableSort(tableValues, getComparator(order, orderBy))
+                  .slice(page * tableValuesPerPage, page * tableValuesPerPage + tableValuesPerPage)
+                  .map((row, index) => {
+                    const isItemSelected = isSelected(row.equipmentname);
+                    const labelId = `enhanced-table-checkbox-${index}`;
+                    console.log(row);
+                    return (
 
-            <TableBody>
-              {stableSort(tableValues, getComparator(order, orderBy))
-                .slice(page * tableValuesPerPage, page * tableValuesPerPage + tableValuesPerPage)
-                .map((row, index) => {
-                  const isItemSelected = isSelected(row.equipmentname);
-                  const labelId = `enhanced-table-checkbox-${index}`;
-                  console.log(row);
-                  return (
+                      <TableRow
+                        className='styled-table-body'
+                        hover
+                        onClick={(event) => handleClick(event, row.equipmentname)}
 
-                    <TableRow
-                      hover
-                      onClick={(event) => handleClick(event, row.equipmentname)}
+                        aria-checked={isItemSelected}
 
-                      aria-checked={isItemSelected}
+                        tabIndex={-1}
+                        key={row.equipmentname}
+                        // style={{marginRight: "4rem"}}
+                        selected={isItemSelected}
+                        sx={{ cursor: 'pointer' }}
+                      >
 
-                      tabIndex={-1}
-                      key={row.equipmentname}
-                      // style={{marginRight: "4rem"}}
-                      selected={isItemSelected}
-                      sx={{ cursor: 'pointer' }}
-                    >
+                        <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.ticketMode}</TableCell>
+                        <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.description}</TableCell>
+                        <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.address}</TableCell>
+                        <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.category}</TableCell>
+                        <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.priority}</TableCell>
+                        <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.assignedto}</TableCell>
+                        <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.ticketId}</TableCell>
+                        <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.createdDate}</TableCell>
+                      </TableRow>
+                    );
+                  })}
+                {emptytableValues > 0 && (
+                  <TableRow
+                    style={{
 
-                      <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.ticketMode}</TableCell>
-                      <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.description}</TableCell>
-                      <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.address}</TableCell>
-                      <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.category}</TableCell>
-                      <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.priority}</TableCell>
-                      <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.assignedto}</TableCell>
-                      <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.ticketId}</TableCell>
-                      <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.createdDate}</TableCell>
-                    </TableRow>
-                  );
-                })}
-              {emptytableValues > 0 && (
-                <TableRow
-                  style={{
-
-                  }}
-                >
-                  <TableCell colSpan={6} />
-                </TableRow>
-              )}
-            </TableBody>
-
+                    }}
+                  >
+                    <TableCell colSpan={6} />
+                  </TableRow>
+                )}
+              </TableBody>
+              {/* </div> */}
           </Table>
         </TableContainer>
       </Paper>
@@ -411,7 +414,10 @@ function TableComponent() {
 
     </Box>
 
+
   );
 }
+
+
 
 export default TableComponent;

@@ -187,7 +187,7 @@ const AddRoleTab = () => {
                 </button>
             </div>
 
-<div>
+<div style={{marginRight: "20px"}}>
     <MappingTab />
 </div>
 

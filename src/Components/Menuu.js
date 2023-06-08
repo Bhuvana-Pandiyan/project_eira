@@ -132,9 +132,10 @@ const Sidebar = () => {
   // }
 
   const handleNavigate = () => {
-    {console.log("navigate")
-    navigate('/allticketoverview')
-  }
+    {
+      console.log("navigate")
+      navigate('/allticketoverview')
+    }
     {
       console.log("navigate");
       navigate('/roleslist')
@@ -146,6 +147,9 @@ const Sidebar = () => {
   }
 
   return (
+
+<div className='mainmenu'>
+
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open} style={{ background: "#D9D9D9", heigh: "24px" }}>
@@ -233,7 +237,7 @@ const Sidebar = () => {
         <List>
 
           {/* <ListItem disablePadding sx={{ display: 'block' }}> */}
-          <ListItem disablePadding sx={{ display: 'block' }}  onClick={handleNavigate}>
+          <ListItem disablePadding sx={{ display: 'block' }} onClick={handleNavigate}>
 
             <ListItemButton
               sx={{
@@ -259,7 +263,7 @@ const Sidebar = () => {
         </List>
         <List>
 
-          <ListItem disablePadding sx={{ display: 'block' }}  onClick={handleNavigate}>
+          <ListItem disablePadding sx={{ display: 'block' }} onClick={handleNavigate}>
             <ListItemButton
               sx={{
                 minHeight: "0px",
@@ -397,6 +401,7 @@ const Sidebar = () => {
         </Typography>
       </Box>
     </Box>
+    </div>
   );
 }
 export default Sidebar;

@@ -1,8 +1,8 @@
 import React from 'react';
 import App from './App';
 import ReactDOM from 'react-dom/client';
- import './Chart.css';
- import './Addnew.css';
+import './Chart.css';
+import './Addnew.css';
 
 // import './Components/View.css' 
 
@@ -78,8 +78,6 @@ root.render(
 //                                 <Typography>3.02 Specific Yiled</Typography>
 //                             </div>
 
-
-
 //                         </div>
 //                     </AccordionDetails>
 //                 </Accordion>
@@ -119,9 +117,7 @@ root.render(
 
 //                         <Paper elevation={3} style={{ display: "flex", justifyContent: 'space-evenly', alignItems: 'center', marginLeft: "2px", fontSize: "18px" }}>
 //                             <span>All Alerts</span> <button className='new'> 3 new</button>
-
 //                         </Paper>
-
 
 //                     </Box>
 //                 </div>

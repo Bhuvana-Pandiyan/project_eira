@@ -1,10 +1,10 @@
 .header {
     position: relative;
     width: 300%;
-    height: 80px;
+    /* height: 80px; */
     margin-left: 30px;
     background: #F2F2F2;
-    margin-top: 120px;
+    /* margin-top: 120px; */
 }
 
 .searchbar {
@@ -203,21 +203,19 @@
     font-size: 12px;
     line-height: 15px;
     color: #999999;
-
 }
 
 .new-botton {
     position: relative;
     top: -20px;
-    width: 170PX;
-    left: 980px;
+    width: 180PX;
+    left: 930px;
     height: 35PX;
     background: #585858;
     border-radius: 4px;
 }
 
 .new-text {
-
     position: relative;
     left: 30px;
     top: 8px;
@@ -447,3 +445,23 @@ margin-top: 10px !important;
 .code-typo{
     margin-top: +70px !important;
 }   */
+
+
+.mee {
+    
+    /* Styles for mobile screens (up to 767px) */
+    @media (max-width: 767px) {
+      background-color: gray;
+    }
+  
+    /* Styles for laptop screens (768px and above) */
+    @media (min-width: 768px) {
+      background-color: rgb(212, 209, 209);
+    }
+  }
+  
+  h1 {
+    color: rgb(222, 211, 211);
+  }
+ 
+

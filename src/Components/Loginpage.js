@@ -5,7 +5,6 @@ import Eira from '../images/eiralogo.jpg'
 import './Loginpage.css'
 import { MdWavingHand } from 'react-icons/md';
 
-
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -16,12 +15,12 @@ import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import { useNavigate } from 'react-router-dom';
 import Link from '@mui/material/Link';
-import Menuu from './Menuu';
 import { Switch, Route, Redirect } from  'react-router-dom';
 
 // import { logoutUser } from '../Compoenets/User';
 // import { logoutUser } from './User'
 import Siteoverview from './Siteoverview'
+import Menuu from './Menuu'
 // import { HashRouter } from 'react-router-dom';
 const Loginpage = () => {
 
@@ -84,7 +83,7 @@ const Loginpage = () => {
         axios.post(`http://3.109.2.47:8088/EiraAPIV2/user/login`, value).then((res) => {
             console.log(res, "response");
             if (res.data === true) {
-                navigate('/siteoverview')
+                navigate('/menuu')
             }
             else {
                 alert("incorrect password or user name ")

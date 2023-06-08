@@ -126,12 +126,9 @@ const Eira = () => {
   const toggleStatus = () => { setStatusShow(!statusShow) }
   const toggleactions = () => { setactionsShow(!actionsShow) }
 
-
-
-
   return (
     <div className="mee">
-      <div className="c">
+      {/* <div className="c"> */}
 
         <div className="arrow-icon">
           <ArrowBackIcon />
@@ -140,7 +137,7 @@ const Eira = () => {
           Ticket overview
         </div>
 
-      </div>
+      {/* </div> */}
 
       <div className="all">
 

@@ -78,11 +78,11 @@ const Siteoverview = () => {
 
     return (
 
-        <div className='main'>
+        <div className='mains'>
 
-            <div className='homeside'>
+            {/* <div className='homeside'>
 
-            </div>
+            </div> */}
 
             <div>
 
@@ -90,9 +90,7 @@ const Siteoverview = () => {
                             <img src={Eira} width={50} height={50} marginRight={"20px"} style={{ marginTop: '-1%', marginRight: "30px" }} />
                         </div> */}
 
-
                 {/* < div className="searchbarr">
-
                    
                     <div className="searchh">
                         Search Sites, Equipment's etc here..
@@ -402,7 +400,7 @@ const Siteoverview = () => {
                         </div>
                     </div>
 
-                    
+
                 </div>
             </div>
         </div >
