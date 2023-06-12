@@ -225,7 +225,7 @@ EnhancedTableToolbar.propTypes = {
     numSelected: PropTypes.number.isRequired,
 };
 
-function Alltickets() {
+function AllAlert() {
     const [order, setOrder] = React.useState('asc');
     const [orderBy, setOrderBy] = React.useState('Site Name');
     const [selected, setSelected] = React.useState([]);
@@ -336,6 +336,7 @@ function Alltickets() {
                         </TableBody>
                     </Table>
                 </TableContainer>
+                <div className='pagination'>
                 <TablePagination
                     rowsPerPageOptions={[5, 10, 25]}
                     component="div"
@@ -345,10 +346,11 @@ function Alltickets() {
                     onPageChange={handleChangePage}
                     onRowsPerPageChange={handleChangeRowsPerPage}
                 />
+                </div>
             </Paper>
 
         </Box>
     );
 }
 
-export default Alltickets;
+export default AllAlert;

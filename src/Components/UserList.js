@@ -32,7 +32,7 @@ const UserList = () => {
                         Search Roles
                     </div>
 
-                    <div className="search-icon">
+                    <div className="search-iconuser" style={{marginTop: "-10px"}}>
                         <SearchIcon />
                     </div>
                 </div>
@@ -55,7 +55,7 @@ const UserList = () => {
                 </div>
             </div>
 
-            <div>
+            <div className='table-components'>
                 <UserListTab />
             </div>
 

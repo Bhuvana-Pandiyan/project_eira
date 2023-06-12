@@ -21,6 +21,7 @@ import Stack from '@mui/material/Stack';
 import { Typography } from '@mui/material';
 import { MdOutlineSettings } from "react-icons/md";
 import ViewTicket from "./ViewTicket";
+import Menuu from './Menuu';
 
 const Eira = () => {
   const [allticket, setAllticket] = React.useState(false)
@@ -131,7 +132,7 @@ const Eira = () => {
       {/* <div className="c"> */}
 
       <div className="arrow-icon">
-        <ArrowBackIcon />
+        <ArrowBackIcon style={{ marginTop: "25px" }} />
       </div>
       <div className="ticket-over">
         Ticket overview
@@ -143,7 +144,6 @@ const Eira = () => {
 
         <Navbar >
           <Container>
-
             <Navbar.Collapse >
               <Nav >
                 <div className="allticket">
@@ -183,7 +183,7 @@ const Eira = () => {
             Search sites here
           </div>
 
-          <div className="search-icon">
+          <div className="search-iconeira">
             <SearchIcon />
           </div>
         </div>
@@ -290,7 +290,12 @@ const Eira = () => {
           < FileDownloadOutlinedIcon />
         </div>
       </div>
-      <div className="table-components">
+
+      {/* <div>
+  <Menuu />
+</div> */}
+
+      <div className="table-componentalto">
         <AllTicketOverView
           operationtickets={operationticket}
           ticketShow={ticketShow}

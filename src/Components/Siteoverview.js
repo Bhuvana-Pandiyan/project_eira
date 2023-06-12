@@ -54,13 +54,14 @@ const Siteoverview = () => {
     }
 
     const hanldeAllTickets = () => {
+        
         setTickets(true)
         setAlerts(false)
         setEquipmentDetails(false)
     }
 
     const hanldeAllAlerts = () => {
-        navigate('/alltickets')
+        // navigate('alltickets')
         setAlerts(true)
         setTickets(false)
         setEquipmentDetails(false)

@@ -1,81 +1,53 @@
-import React, { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Siteoverview from './Components/Siteoverview';
-import Menuu from './Components/Menuu';
-// import Home from './Components/Home';
-import AllTickets from './Components/AllTickets';
-import AllAlert from './Components/AllAlert';
-import axios from 'axios';
-import Eira from './Components/Eira';
-import RolesList from './Components/RolesList';
-import Sidebar from './Components/Sidebar';
-import Viewticket from './Components/ViewTicket';
-import Forgot from './Components/Forgot';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// import './Eira.css';
-import Loginpage from './Components/Loginpage';
-import UserList from './Components/UserList';
-import AddRole from './Components/AddRole';
-import RoleMapping from './Components/RoleMapping';
-import MappingTab from './Components/MappingTab';
+/*----------------Login Import ------------------------*/
+
+import Login from './Components/Loginpage'
+import ForgettenPassowrd from './Components/Forgot'
+
+/*--------------------Side bar ------------------------*/
+import Sidebar from './Components/Sidebar'
+
+/*-------------------- Components -----------------------*/
+import Siteoverview from "./Components/Siteoverview";
+import AllTicketOverView from "./Components/AllTicketOverView";
+import Eira from "./Components/Eira";
+import RolesList from "./Components/RolesList";
+import UserList from "./Components/UserList";
+import AddRole from "./Components/AddRole";
+import ViewTicket from "./Components/ViewTicket";
+import AllAlert from "./Components/AllAlert";
+import Alltickets from "./Components/AllTickets";
 
 function App() {
 
-  // const [getValue, setGetValue] = useState([])
-  // useEffect(() => {
-  //   getCall();
-  // }, [])
-  // const getCall = () => {
-  //   axios.get(`http://inspirece.com/eiramobileservice/rest/eampm/login/userid=9087777058&deviceid=3a62374ed340e92e&password=Test@123&timezoneoffset=330`)
-  //     .then((res) => {
-  //       console.log(res.data);
-  //       setGetValue(res.data)
-  //     })
-  /*------ post ----- new data add ---*/
-  // let value={
-  //   name:'',
-  //   age:''
-  // }
-  // axios.post(`api`,value).then((res) => {
-  //   console.log(res.data);
-  //   getCall()
-  // }) 
-  /*------put ------update  */
-  // axios.put(`api&id=${id}`,value).then((res) => {
-  //   console.log(res.data);
-  //   getCall()
-  // }) 
-
-  /*------delete ------delete  */
-  //    axios.delete(`api&id=${id}`,value).then((res) => {
-  //     console.log(res.data);
-  //     getCall()
-  //   })
-  // }
-  // console.log(getValue, "getValue");
-
-
   return (
-    <div className="App">
+
+    <div>
       <Router>
         <Routes>
-          <Route exact path="/" element={<Loginpage />} />
-          <Route exact path="/menuu" element={<Menuu />} />
-          <Route path="/forgot" element={<Forgot />} />
-          <Route path="/siteoverview" element={<Menuu />} />
-          <Route path="/allAlert" element={<AllAlert />} />
-          <Route path="/alltickets" element={<AllTickets />} />
-          <Route path="/allticketoverview" element={<Sidebar />} />
-          <Route path='/viewTicket' element={<Viewticket />} />
-          <Route path='/roleslist' element={<RolesList />} />
-          <Route path='/userlist' element={<UserList />} />
-          <Route path='/addrole' element={<AddRole />} />
-          <Route path='/roleMapping' element={<RoleMapping />} />
-          <Route path='/mapping' element={<MappingTab />} />
+          <Route path='' element={<Login />} />
+          <Route path='forgettenpassword' element={<ForgettenPassowrd />} />
+
+          {
+            localStorage.getItem("token") &&
+            <Route path="dashboard" element={<Sidebar />}>
+              <Route path="" element={<Siteoverview />} />
+              <Route path="alltickets" element={<Alltickets />} />
+              <Route path="allalerts" element={<AllAlert />} />
+              <Route path="home" element={<Eira />} />
+              <Route path="role" element={<RolesList />} />
+              <Route path="addrole" element={<AddRole />} />
+              <Route path="user" element={<UserList />} />
+              <Route path="" element={<ViewTicket />} />
+            </Route>
+          }
+
         </Routes>
       </Router>
+
     </div>
-  );
+  )
 }
+
 export default App;

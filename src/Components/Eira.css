@@ -7,6 +7,10 @@
     /* margin-top: 120px; */
 }
 
+.header-search{
+    margin-top: 50px;
+}
+
 .searchbar {
     position: relative;
     width: 260px;
@@ -33,10 +37,13 @@
     position: absolute;
     right: 8.94%;
     position: relative;
-    top: -5px;
+   top: 10px;
     height: 30px;
     left: 5px;
     color: #999999;
+}
+.search-iconeira{
+    margin-top: -9px;
 }
 
 .out-form {
@@ -107,7 +114,7 @@
 
 .ticket-over {
     margin-left: 60px;
-    margin-top: -30px;
+    margin-top: -29px;
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
@@ -170,10 +177,9 @@
 }
 
 .more-icon {
-    margin-left: 1110px;
+    margin-left: 1190px;
     margin-top: -20px;
 }
-
 
 .input {
     position: relative;
@@ -184,7 +190,6 @@
 }
 
 .folder {
-
     position: relative;
     width: 233px;
     height: 37px;
@@ -195,7 +200,6 @@
 }
 
 .search-site {
-
     position: relative;
     left: 40px;
     top: 10px;
@@ -260,10 +264,16 @@
     width: 105%;
 }
 
+.table-componentalto{
+    width: 100%;
+    margin-top: -3px;
+}
+
 .table-components {
   
     width: 100%;
     margin-top: -3px;
+    margin-left: 247px;
 }
 
 /* .MuiTablePagination-root,
@@ -374,11 +384,12 @@
     margin-left: 1195px;
     margin-top: -25px;
 }
-
-.arrow-view{
-    margin-top: -10px;
-    margin-left: 20px;
 }*/
+
+.arrow-icon{
+    margin-bottom: -10px;
+   
+}
 
 .h-view {
     margin-top: 20px;
@@ -452,7 +463,7 @@ margin-top: 10px !important;
 
 
 .mee {
-    
+    margin-top: 40px;
     /* Styles for mobile screens (up to 767px) */
     @media (max-width: 767px) {
       background-color: rgb(216, 242, 252);

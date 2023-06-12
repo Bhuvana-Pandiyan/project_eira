@@ -15,7 +15,7 @@ import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import { useNavigate } from 'react-router-dom';
 import Link from '@mui/material/Link';
-import { Switch, Route, Redirect } from  'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 // import { logoutUser } from '../Compoenets/User';
 // import { logoutUser } from './User'
@@ -24,25 +24,25 @@ import Menuu from './Menuu'
 // import { HashRouter } from 'react-router-dom';
 const Loginpage = () => {
 
-// const Loginpage = (props) => {
-//     const { dispatch } = props;
-//     const PrivateRoute = ({ dispatch, component, ...rest }) => {
-//         const logoutTimestamp = Siteoverview(localStorage.getItem('loginTime')).add(30, 'm').toDate();
-//         if (!localStorage.getItem('userEmail') && !(logoutTimestamp > new window.Date())) {
-         
-//             return (<Redirect to="/Loginpage" />)
-//         } else {
-//             return ( // eslint-disable-line
-//                 <Route {...rest} render={props => (React.createElement(component, props))} />
-//             );
-//         }
-//     };
+    // const Loginpage = (props) => {
+    //     const { dispatch } = props;
+    //     const PrivateRoute = ({ dispatch, component, ...rest }) => {
+    //         const logoutTimestamp = Siteoverview(localStorage.getItem('loginTime')).add(30, 'm').toDate();
+    //         if (!localStorage.getItem('userEmail') && !(logoutTimestamp > new window.Date())) {
 
-//     <HashRouter>
-//         <Switch>
-//             <PrivateRoute path="/app" dispatch={dispatch} component={Siteoverview} />
-//         </Switch>
-//     </HashRouter>
+    //             return (<Redirect to="/Loginpage" />)
+    //         } else {
+    //             return ( // eslint-disable-line
+    //                 <Route {...rest} render={props => (React.createElement(component, props))} />
+    //             );
+    //         }
+    //     };
+
+    //     <HashRouter>
+    //         <Switch>
+    //             <PrivateRoute path="/app" dispatch={dispatch} component={Siteoverview} />
+    //         </Switch>
+    //     </HashRouter>
 
     //  function logoutUser() {
     //         return (dispatch) => {
@@ -53,7 +53,7 @@ const Loginpage = () => {
     //             dispatch(receiveLogout());
     //         };
     //     }
- 
+
 
     const navigate = useNavigate()
     const [showPassword, setShowPassword] = React.useState(false);
@@ -61,9 +61,13 @@ const Loginpage = () => {
     const [Password, setPassword] = React.useState('')
     const [tableValues, setTables] = React.useState([])
     const handleClickShowPassword = () => setShowPassword((show) => !show);
+
     useEffect(() => {
-        getCall();
-    }, [])
+        if (localStorage.getItem("token")) {
+            navigate("dashboard")
+        }
+
+    }, [localStorage])
     const handleLogin = () => {
         if (userName === "udayaprakashjayaraman@gmail.com" && Password === "UPJ@123") {
             navigate("/forgot")
@@ -83,7 +87,8 @@ const Loginpage = () => {
         axios.post(`http://3.109.2.47:8088/EiraAPIV2/user/login`, value).then((res) => {
             console.log(res, "response");
             if (res.data === true) {
-                navigate('/menuu')
+                localStorage.setItem("token", "validateToken")
+                window.location.reload();
             }
             else {
                 alert("incorrect password or user name ")
@@ -178,10 +183,10 @@ const Loginpage = () => {
 
                         <div className='but'>
                             <Stack spacing={2} direction="row">
-                      
+
                                 <Button variant="contained" style={{ width: "45ch", backgroundColor: "#383bfc", marginLeft: "11%", marginTop: "4%" }} onClick={handleNavigate} >Log In</Button>
                             </Stack>
-                       
+
                         </div>
 
                         <Typography style={{ marginLeft: "15%", marginTop: "7%" }}>

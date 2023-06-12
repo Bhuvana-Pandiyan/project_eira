@@ -21,6 +21,7 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import { visuallyHidden } from '@mui/utils';
 import { Link } from 'react-router-dom';
+import ViewTicket from './ViewTicket';
 
 function createData(siteId, priority, createdtime, category, assignedto, expectedtat, ticketCode, ticketType, actions) {
   return {
@@ -33,33 +34,6 @@ function createData(siteId, priority, createdtime, category, assignedto, expecte
 //   { "siteNo": 20393835, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "in Progress" },
 //   { "siteNo": 20393836, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "On Hold" },
 //   { "siteNo": 20393837, "sitename": "XYZ Limited", "priority": "Low", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "Closed" },
-//   { "siteNo": 20393838, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "Closed" },
-//   { "siteNo": 20393839, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 5 Days", "ticketType": "in Progress" },
-//   { "siteNo": 20393840, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "Closed" },
-//   { "siteNo": 20393841, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "Closed" },
-//   { "siteNo": 20393842, "sitename": "XYZ Limited", "priority": "Low", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 5 Days", "ticketType": "in pending" },
-//   { "siteNo": 20393843, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "On Hold" },
-//   { "siteNo": 20393844, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "in Progress" },
-//   { "siteNo": 20393845, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 6 Days", "ticketType": "in Progress" },
-//   { "siteNo": 20393846, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "Closed" },
-//   { "siteNo": 20393847, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "Closed" },
-//   { "siteNo": 20393848, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "On Hold" },
-//   { "siteNo": 20393850, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "in Pending" },
-//   { "siteNo": 20393851, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "in Pending" },
-//   { "siteNo": 20393846, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "Closed" },
-//   { "siteNo": 20393847, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "Closed" },
-//   { "siteNo": 20393848, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "On Hold" },
-//   { "siteNo": 20393850, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "in Pending" },
-//   { "siteNo": 20393851, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "in Pending" },
-//   { "siteNo": 20393852, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "Closed" },
-//   { "siteNo": 20393853, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "Closed" },
-//   { "siteNo": 20393854, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "On Hold" },
-//   { "siteNo": 20393855, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "in Pending" },
-//   { "siteNo": 20393856, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "in Pending" },
-//   { "siteNo": 20393860, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "Closed" },
-//   { "siteNo": 20393861, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "Closed" },
-
-// ]
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -214,35 +188,35 @@ function EnhancedTableHead(props) {
   console.log(headcells, 'headcells');
   return (
     // <div className='alltkctov'>
-      <TableHead >
-        <TableRow  >
+    <TableHead >
+      <TableRow  >
 
-          {headcells.map((headCell) => (
-            <TableCell
+        {headcells.map((headCell) => (
+          <TableCell
 
-              key={headCell.id}
-              align={'center'}
-              style={{ fontSize: "12px", marginLeft: "-15px" }}
-              // padding={headCell.disablePadding ? 'none' : 'normal'}
-              sortDirection={orderBy === headCell.id ? order : false}
+            key={headCell.id}
+            align={'center'}
+            style={{ fontSize: "12px", marginLeft: "-15px" }}
+            // padding={headCell.disablePadding ? 'none' : 'normal'}
+            sortDirection={orderBy === headCell.id ? order : false}
+          >
+            <TableSortLabel
+              active={orderBy === headCell.id}
+              direction={orderBy === headCell.id ? order : 'asc'}
+              onClick={createSortHandler(headCell.id)}
             >
-              <TableSortLabel
-                active={orderBy === headCell.id}
-                direction={orderBy === headCell.id ? order : 'asc'}
-                onClick={createSortHandler(headCell.id)}
-              >
-                {headCell.label}
-                {orderBy === headCell.id ? (
-                  <Box component="span" sx={visuallyHidden}>
-                    {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
-                  </Box>
-                ) : null}
-              </TableSortLabel>
-            </TableCell>
-          ))}
-        </TableRow>
-      </TableHead>
-      // </div> 
+              {headCell.label}
+              {orderBy === headCell.id ? (
+                <Box component="span" sx={visuallyHidden}>
+                  {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
+                </Box>
+              ) : null}
+            </TableSortLabel>
+          </TableCell>
+        ))}
+      </TableRow>
+    </TableHead>
+    // </div> 
 
   );
 
@@ -439,6 +413,7 @@ function AllTicketOverView(props) {
               rowCount={tableValues.length}
             />
             {/* <div className=''> */}
+
             <TableBody>
               {stableSort(rowsPage, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
@@ -465,35 +440,34 @@ function AllTicketOverView(props) {
                       {assignedShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.assignedto}</TableCell>}
                       {statusShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }} >{row.ticketType}</TableCell>}
                       <TableCell style={{ textAlign: "center", fontSize: "14px" }} >< EditOutlinedIcon /> <PermIdentityIcon /><CheckCircleOutlineOutlinedIcon /></TableCell>
-
                     </TableRow>
 
                   );
                 })}
               {emptyRows > 0 && (
                 <TableRow
-
                 >
                   <TableCell colSpan={6} />
                 </TableRow>
               )}
             </TableBody>
+
             {/* </div> */}
 
           </Table>
 
         </TableContainer>
       </Paper>
-<div className='pagination'>
-      <TablePagination
-        rowsPerPageOptions={[5, 10, 25]}
-        count={rowsPage.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        component='div'
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={(e) => handleChangeRowsPerPage(e)}
-      />
+      <div className='pagination'>
+        <TablePagination
+          rowsPerPageOptions={[5, 10, 25]}
+          count={rowsPage.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          component='div'
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={(e) => handleChangeRowsPerPage(e)}
+        />
       </div>
     </Box>
     // </div>

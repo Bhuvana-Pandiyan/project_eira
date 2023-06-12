@@ -142,7 +142,7 @@ function EnhancedTableHead(props) {
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={'left'}
+            align={'center'}
             // align={headCell.numeric ? 'left' : 'left'}
             padding={headCell.disablePadding ? 'none' : 'normal'}
             sortDirection={orderBy === headCell.id ? order : false}
@@ -246,19 +246,19 @@ function RoleListTab() {
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelected = rows.map((n) => n.name);
+      const newSelected = rows.map((n) => n.roleid);
       setSelected(newSelected);
       return;
     }
     setSelected([]);
   };
 
-  const handleClick = (event, name) => {
-    const selectedIndex = selected.indexOf(name);
+  const handleClick = (event, roleid) => {
+    const selectedIndex = selected.indexOf(roleid);
     let newSelected = [];
 
     if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name);
+      newSelected = newSelected.concat(selected, roleid);
     } else if (selectedIndex === 0) {
       newSelected = newSelected.concat(selected.slice(1));
     } else if (selectedIndex === selected.length - 1) {
@@ -286,7 +286,7 @@ function RoleListTab() {
     setDense(event.target.checked);
   };
 
-  const isSelected = (name) => selected.indexOf(name) !== -1;
+  const isSelected = (roleid) => selected.indexOf(roleid) !== -1;
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
@@ -321,17 +321,17 @@ function RoleListTab() {
             />
             <TableBody>
               {visibleRows.map((row, index) => {
-                const isItemSelected = isSelected(row.name);
+                const isItemSelected = isSelected(row.roleid);
                 const labelId = `enhanced-table-checkbox-${index}`;
 
                 return (
                   <TableRow
                     hover
-                    onClick={(event) => handleClick(event, row.name)}
+                    onClick={(event) => handleClick(event, row.roleid)}
                     role="checkbox"
                     aria-checked={isItemSelected}
                     tabIndex={-1}
-                    key={row.name}
+                    key={row.roleid}
                     selected={isItemSelected}
                     sx={{ cursor: 'pointer' }}
                   >
@@ -348,17 +348,17 @@ function RoleListTab() {
                       component="th"
                       id={labelId}
                       scope="row"
-                      padding="none"
+                      padding="none"   
                     >
-                      {row.name}
+                      {row.roleid}
                     </TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px" }}>{row.roleid}</TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px" }}>{row.rolename}</TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px" }}>{row.roledescription}</TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px" }}>{row.rolestatus}</TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px" }}>{row.createddate}</TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px" }}>{row.action}</TableCell>
-                    <TableCell style={{ align: "left", fontSize: "14px" }} >< EditOutlinedIcon /> <DeleteOutlineIcon /> </TableCell>
+                    <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.roleid}</TableCell>
+                    <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.rolename}</TableCell>
+                    <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.roledescription}</TableCell>
+                    <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.rolestatus}</TableCell>
+                    <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.createddate}</TableCell>
+                    <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.action}</TableCell>
+                    <TableCell style={{ textAlign: "center", fontSize: "14px" }} >< EditOutlinedIcon /> <DeleteOutlineIcon /> </TableCell>
                   </TableRow>
                 );
               })}

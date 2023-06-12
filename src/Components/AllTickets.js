@@ -338,6 +338,7 @@ function Alltickets() {
                         </TableBody>
                     </Table>
                 </TableContainer>
+                <div className='pagination'>
                 <TablePagination
                     rowsPerPageOptions={[5, 10, 25]}
                     component="div"
@@ -347,6 +348,7 @@ function Alltickets() {
                     onPageChange={handleChangePage}
                     onRowsPerPageChange={handleChangeRowsPerPage}
                 />
+                </div>
             </Paper>
 
         </Box>

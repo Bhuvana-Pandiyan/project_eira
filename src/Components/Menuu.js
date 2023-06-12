@@ -29,7 +29,6 @@ import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineForm } from "react-icons/ai";
 import InputAdornment from '@mui/material/InputAdornment';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
-
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded';
 import Eira from './Eira';
@@ -108,9 +107,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-
-
-const Sidebar = () => {
+const Menuu = () => {
 
   const navigate = useNavigate()
   const theme = useTheme();
@@ -123,6 +120,8 @@ const Sidebar = () => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  
+
 
   // const handleNavigate = () => {
   //   console.log("navigate")
@@ -134,8 +133,9 @@ const Sidebar = () => {
   const handleNavigate = () => {
     {
       console.log("navigate")
-      navigate('/allticketoverview')
+      navigate('/eira')
     }
+    
     {
       console.log("navigate");
       navigate('/roleslist')
@@ -388,15 +388,15 @@ const Sidebar = () => {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
 
-        <div className='table-component'>
+        {/* <div className='table-component'>
           <Siteoverview />
         </div>
+     */}
 
-        <Typography paragraph>
-          {/* {<Eira />} */}
+        <Typography >
+          {/* <Eira /> */}
           {/* {<ViewTicket />} */}
           {/* {<RolesList />} */}
-
           {/* { <AllTicketOverView />}   */}
         </Typography>
       </Box>
@@ -404,4 +404,4 @@ const Sidebar = () => {
     </div>
   );
 }
-export default Sidebar;
+export default Menuu;

@@ -1,9 +1,8 @@
 import * as React from 'react';
-import './View.css';
-import './Eira.css';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
+import Eira from './Eira';
+import './Eira.css';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -19,43 +18,21 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { AiOutlineLink } from "react-icons/ai";
-import { BiHome } from "react-icons/bi";
-import { HiOutlineChartPie } from "react-icons/hi";
-import { FiMap } from "react-icons/fi";
+import { TfiMenuAlt } from 'react-icons/tfi';
+
+import { BiHome, BiBarChartAlt2 } from "react-icons/bi";
+import { HiOutlineChartPie } from "react-icons/hi"
+import { AiFillEye, AiOutlineLink } from "react-icons/ai"
+import { Outlet, useNavigate } from 'react-router-dom';
+
 import SearchIcon from '@mui/icons-material/Search';
+import { AiOutlineForm } from "react-icons/ai";
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import { AiOutlineUser } from "react-icons/ai";
-import { AiOutlineForm } from "react-icons/ai";
-import InputAdornment from '@mui/material/InputAdornment';
-import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded';
-import Eira from './Eira';
 
-import AllTicketOverView from './AllTicketOverView';
-import Siteoverview from './Siteoverview';
-import ViewTicket from './ViewTicket';
-import { useNavigate } from 'react-router-dom';
 
-// import React, { createContext, useState } from 'react';
 
-// export const SidebarContext = createContext();
-
-// export const SidebarProvider = ({ children }) => {
-//   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-//   const toggleSidebar = () => {
-//     setIsSidebarOpen(!isSidebarOpen);
-//   };
-
-//   return (
-//     <SidebarContext.Provider value={{ isSidebarOpen, toggleSidebar }}>
-//       {children}
-//     </SidebarContext.Provider>
-//   );
-// };
 
 const drawerWidth = 240;
 
@@ -81,7 +58,6 @@ const closedMixin = (theme) => ({
 });
 
 const DrawerHeader = styled('div')(({ theme }) => ({
-
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
@@ -108,7 +84,6 @@ const AppBar = styled(MuiAppBar, {
     }),
 }));
 
-
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
         width: drawerWidth,
@@ -126,11 +101,9 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
 );
 
+export default function MiniDrawer() {
 
-
-const Sidebar = () => {
-
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -141,15 +114,20 @@ const Sidebar = () => {
     const handleDrawerClose = () => {
         setOpen(false);
     };
-    const handleNavigate = () => {
-        console.log("navigate")
-        navigate('/allticketoverview')
+
+    const navigateCall = (params) => {
+        if (!params) {
+            navigate("dashboard")
+        }
+        else {
+            navigate(`${params}`)
+        }
     }
 
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="fixed" open={open} style={{ background: "#D9D9D9", heigh: "24px" }}>
+            <AppBar position="fixed" open={open}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -164,41 +142,44 @@ const Sidebar = () => {
                         <MenuIcon />
                     </IconButton>
 
-                    <div className="" style={{ width: "100%" }}>
+                    <Typography variant="h6" noWrap component="div">
+                        <div className="header-search" style={{ width: "100%" }}>
+                            < div className="searchbar">
 
-                        <div className="" >
-                            <TextField variant="standard" placeholder=" Search site equipment etc here"
-                                InputProps={{
-                                    startAdornment: (
-                                        <InputAdornment position="start">
-                                 <SearchIcon />
-                                        </InputAdornment>
-                                    ),
-                                }}
+                                <div className="search" >
+                                    Search site equipment etc here
+                                </div>
 
-                            />
+                                <div className="search-icon">
+                                    <SearchIcon />
+                                </div>
+                            </div>
+
+                            <div className="user">
+                                <div className="out-form">
+                                    <AiOutlineForm color="black" size="1.4rem" />
+                                </div>
+
+                                <div className='notify' >
+                                    <NotificationsNoneIcon color="black" size="1.8rem" />
+                                </div>
+
+                                <div className="user-name"  >
+                                    <Typography >Srinivasan</Typography>
+                                </div>
+
+                                <div className="person">
+                                    <AiOutlineUser color="black" size="1.4rem" />
+                                </div>
+                            </div>
+
                         </div>
+                    </Typography>
 
-                        <div className="user">
-                            <div className="out-form">
-                                <AiOutlineForm color="black" size="1.4rem" />
-                            </div>
 
-                            <div className='notify' >
-                                <NotificationsNoneIcon color="black" size="1.8rem" />
-                            </div>
-
-                            <div className="user-name"  >
-                                <Typography >Srinivasan</Typography>
-                            </div>
-
-                            <div className="person">
-                                <AiOutlineUser color="black" size="1.4rem" />
-                            </div>
-                        </div>
-
-                    </div>
-
+                    {/* <Typography variant="h6" noWrap component="div">
+            Mini variant drawer
+          </Typography> */}
                 </Toolbar>
             </AppBar>
             <Drawer variant="permanent" open={open}>
@@ -209,189 +190,66 @@ const Sidebar = () => {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    <ListItem disablePadding sx={{ display: 'block' }}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: "0px",
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 5 : 'auto',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                <span>   <BiHome color="black" size="1.7rem" /></span>
+                    <ListItem disablePadding onClick={() => navigateCall('home')}>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <BiHome color="black" size="1.7rem" />
                             </ListItemIcon>
-                            <ListItemText primary="Home" sx={{ opacity: open ? 1 : 0 }} />
+                            <ListItemText primary="Tickets" />
                         </ListItemButton>
                     </ListItem>
 
-                </List>
-                <List>
-
-                    <ListItem disablePadding sx={{ display: 'block' }}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: "0px",
-                                top: "-25px",
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-
-                            }}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 5 : 'auto',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                <HiOutlineChartPie color="black" size="1.5rem" top="-40%" />
+                    <ListItem disablePadding onClick={() => navigateCall('role')}>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <HiOutlineChartPie color="black" size="1.7rem" />
                             </ListItemIcon>
-                            <ListItemText primary="Circle" sx={{ opacity: open ? 1 : 0 }} />
+                            <ListItemText primary="Role List" />
                         </ListItemButton>
                     </ListItem>
 
-                </List>
-                <List>
-
-                    <ListItem disablePadding sx={{ display: 'block' }}>
-                        <ListItemButton
-                            sx={{     
-                                minHeight: "0px",
-                                top: "-50px",
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 5 : 'auto',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                <AccountCircleOutlinedIcon style={{ color: "black" }} />
+                    <ListItem disablePadding onClick={() => navigateCall('user')}>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <BiBarChartAlt2 color="black" size="1.7rem" />
                             </ListItemIcon>
-                            <ListItemText primary="User" sx={{ opacity: open ? 1 : 0 }} />
+                            <ListItemText primary="User List" />
                         </ListItemButton>
                     </ListItem>
 
-                </List>
-                <List>
-
-                    <ListItem disablePadding sx={{ display: 'block' }}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: 0,
-                                top: "3px",
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 5 : 'auto',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                < VisibilityRoundedIcon style={{ color: "black", marginTop: "-75px" }} />
+                    <ListItem disablePadding onClick={() => navigateCall('')}>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <AiFillEye color="black" size="1.7rem" />
                             </ListItemIcon>
-                            <ListItemText style={{ marginTop: "-120px" }} primary="Visibility" sx={{ opacity: open ? 1 : 0 }} />
-                        </ListItemButton>
-                    </ListItem>
-                </List>
-                <List>
-
-                    <ListItem disablePadding sx={{ display: 'block' }}>
-                        <ListItemButton
-                            sx={{
-                                top: "-72px",
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 5 : 'auto',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                <AiOutlineLink color="black" size="1.8rem" />
-                            </ListItemIcon>
-                            <ListItemText style={{ marginLeft: "-3px" }} primary="Edit" sx={{ opacity: open ? 1 : 0 }} />
+                            <ListItemText primary="Visibility" />
                         </ListItemButton>
                     </ListItem>
 
-                </List>
-                <List>
-
-                    <ListItem disablePadding sx={{ display: 'block' }} onClick={handleNavigate} >
-                        <ListItemButton
-                            sx={{
-                                top: "-72px",
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 5 : 'auto',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                <FormatListBulletedIcon color="black" size="1.8rem" />
+                    <ListItem disablePadding onClick={() => navigateCall('')}>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                < AiOutlineLink color="black" size="1.7rem" />
                             </ListItemIcon>
-                            <ListItemText style={{ marginLeft: "-3px" }} primary="Edit" sx={{ opacity: open ? 1 : 0 }} />
+                            <ListItemText primary="Link" />
                         </ListItemButton>
                     </ListItem>
 
-                </List>
-            
-                <List>
-                    <ListItem disablePadding sx={{ display: 'block' }}>
-                        <ListItemButton
-                            sx={{
-                                minHeight: 0,
-                                top: "-93px",
-                                left: "3px",
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 5 : 'auto',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                <FiMap color="black" size="1.3rem" Top="-15px" />
+                    <ListItem disablePadding onClick={() => navigateCall('')}>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <TfiMenuAlt color="black" size="1.7rem" />
                             </ListItemIcon>
-                            <ListItemText primary="Map" sx={{ opacity: open ? 1 : 0 }} />
+                            <ListItemText primary="Map" />
                         </ListItemButton>
                     </ListItem>
 
                 </List>
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-                <DrawerHeader />
-                <Typography paragraph>
-                    {<Eira />}
-                    {/* {<ViewTicket />} */}
-
-                    {/* { <AllTicketOverView />}   */}
-                </Typography>
-
+                {/* <Eira /> */}
+                <Outlet />
             </Box>
         </Box>
     );
 }
-export default Sidebar;
