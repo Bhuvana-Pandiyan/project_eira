@@ -115,7 +115,15 @@
 .ticket-over {
     margin-left: 60px;
     margin-top: -29px;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+}
+.ticket-over-role{
+    margin-left: 60px;
+    margin-top: -29px;
+    font-weight: 400;
     font-size: 20px;
     line-height: 24px;
     color: #000000;

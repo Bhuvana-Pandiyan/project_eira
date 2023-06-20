@@ -254,7 +254,7 @@ function TableComponent() {
   const [page, setPage] = React.useState(1);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [rowsPage, setRows] = React.useState([]);
-  
+
   const [dense, setDense] = React.useState(false);
   const [tableValuesPerPage, settableValuesPerPage] = React.useState(5);
 
@@ -348,51 +348,51 @@ function TableComponent() {
               rowCount={tableValues.length}
             />
             {/* <div className='sitetab'> */}
-              <TableBody>
-                {stableSort(tableValues, getComparator(order, orderBy))
-                  .slice(page * tableValuesPerPage, page * tableValuesPerPage + tableValuesPerPage)
-                  .map((row, index) => {
-                    const isItemSelected = isSelected(row.equipmentname);
-                    const labelId = `enhanced-table-checkbox-${index}`;
-                    console.log(row);
-                    return (
+            <TableBody>
+              {stableSort(tableValues, getComparator(order, orderBy))
+                .slice(page * tableValuesPerPage, page * tableValuesPerPage + tableValuesPerPage)
+                .map((row, index) => {
+                  const isItemSelected = isSelected(row.equipmentname);
+                  const labelId = `enhanced-table-checkbox-${index}`;
+                  console.log(row);
+                  return (
 
-                      <TableRow
-                        className='styled-table-body'
-                        hover
-                        onClick={(event) => handleClick(event, row.equipmentname)}
+                    <TableRow
+                      className='styled-table-body'
+                      hover
+                      onClick={(event) => handleClick(event, row.equipmentname)}
 
-                        aria-checked={isItemSelected}
+                      aria-checked={isItemSelected}
 
-                        tabIndex={-1}
-                        key={row.equipmentname}
-                        // style={{marginRight: "4rem"}}
-                        selected={isItemSelected}
-                        sx={{ cursor: 'pointer' }}
-                      >
+                      tabIndex={-1}
+                      key={row.equipmentname}
+                      // style={{marginRight: "4rem"}}
+                      selected={isItemSelected}
+                      sx={{ cursor: 'pointer' }}
+                    >
 
-                        <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.ticketMode}</TableCell>
-                        <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.description}</TableCell>
-                        <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.address}</TableCell>
-                        <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.category}</TableCell>
-                        <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.priority}</TableCell>
-                        <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.assignedto}</TableCell>
-                        <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.ticketId}</TableCell>
-                        <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.createdDate}</TableCell>
-                      </TableRow>
-                    );
-                  })}
-                {emptytableValues > 0 && (
-                  <TableRow
-                    style={{
+                      <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.ticketMode}</TableCell>
+                      <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.description}</TableCell>
+                      <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.address}</TableCell>
+                      <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.category}</TableCell>
+                      <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.priority}</TableCell>
+                      <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.assignedto}</TableCell>
+                      <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.ticketId}</TableCell>
+                      <TableCell style={{ align: "center", fontSize: "14px", width: "30px" }}>{row.createdDate}</TableCell>
+                    </TableRow>
+                  );
+                })}
+              {emptytableValues > 0 && (
+                <TableRow
+                  style={{
 
-                    }}
-                  >
-                    <TableCell colSpan={6} />
-                  </TableRow>
-                )}
-              </TableBody>
-              {/* </div> */}
+                  }}
+                >
+                  <TableCell colSpan={6} />
+                </TableRow>
+              )}
+            </TableBody>
+            {/* </div> */}
           </Table>
         </TableContainer>
       </Paper>
@@ -408,16 +408,16 @@ function TableComponent() {
       />
       </div> */}
       <div className='pagination'>
-      <TablePagination
+        <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           count={rowsPage.length}
           rowsPerPage={rowsPerPage}
           page={page}
           component='div'
           onPageChange={handleChangePage}
-          onRowsPerPageChange={(e)=>handleChangePage(e)}
+          onRowsPerPageChange={(e) => handleChangePage(e)}
         />
-        </div>
+      </div>
 
     </Box>
 

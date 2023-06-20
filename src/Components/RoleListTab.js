@@ -29,7 +29,7 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 function createData(roleid, rolename, roledescription, rolestatus, createddate, action) {
 
   return {
-    
+
     roleid,
     rolename,
     roledescription,
@@ -348,11 +348,11 @@ function RoleListTab() {
                       component="th"
                       id={labelId}
                       scope="row"
-                      padding="none"   
+                      padding="none"
                     >
                       {row.roleid}
                     </TableCell>
-                    <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.roleid}</TableCell>
+                    {/* <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.roleid}</TableCell> */}
                     <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.rolename}</TableCell>
                     <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.roledescription}</TableCell>
                     <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.rolestatus}</TableCell>
@@ -366,6 +366,7 @@ function RoleListTab() {
                 <TableRow
                   style={{
                     height: (dense ? 33 : 53) * emptyRows,
+
                   }}
                 >
                   <TableCell colSpan={6} />

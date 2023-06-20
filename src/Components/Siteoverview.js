@@ -39,7 +39,6 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-
 const Siteoverview = () => {
 
     const navigate = useNavigate()
@@ -54,7 +53,7 @@ const Siteoverview = () => {
     }
 
     const hanldeAllTickets = () => {
-        
+
         setTickets(true)
         setAlerts(false)
         setEquipmentDetails(false)

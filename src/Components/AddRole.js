@@ -37,7 +37,6 @@ const AddRole = () => {
     setAnchorEl(null);
   };
 
-
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
@@ -113,8 +112,8 @@ const AddRole = () => {
         </div>
         <div className="ticket-over">
           <Typography>  Roles List <br />
-          A role provided access to predefined menus and features so that depending
-          on assigned role an administrator can have access to what they need.
+            A role provided access to predefined menus and features so that depending
+            on assigned role an administrator can have access to what they need.
           </Typography>
         </div>
 
@@ -127,7 +126,7 @@ const AddRole = () => {
             Search Roles
           </div>
 
-          <div className="search-icon">
+          <div className="search-iconadd"  >
             <SearchIcon />
           </div>
         </div>
@@ -135,8 +134,8 @@ const AddRole = () => {
         <div className="but">
           <div className="new-botton">
             <div className="new-text">
-            {/* {<Link to ='/AddRole'> <Typography style={{color: "white", width: "260px"}}> ROLE MAPPING </Typography> </Link>} */}
-         <Typography > ROLE MAPPING </Typography>
+              {/* {<Link to ='/AddRole'> <Typography style={{color: "white", width: "260px"}}> ROLE MAPPING </Typography> </Link>} */}
+              <Typography > ROLE MAPPING </Typography>
             </div>
 
           </div>
@@ -144,7 +143,7 @@ const AddRole = () => {
 
         <div className="setting-icon">
           <div className='setting-dropdown'>
-           
+
             <Modal
               open={open}
               onClose={handleClose}
@@ -230,7 +229,7 @@ const AddRole = () => {
 
         />
       </div>
-      </div>
+    </div>
 
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './Style.css';
 import PropTypes from 'prop-types';
 import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -14,18 +14,14 @@ import TableSortLabel from '@mui/material/TableSortLabel';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
+import { Link } from 'react-router-dom';
+import AddRole from './AddRole';
 
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
-import DeleteIcon from '@mui/icons-material/Delete';
-import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
-
-import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-
+import { useNavigate } from 'react-router-dom';
 
 function createData(rolename, accesspages, edit) {
     return {
@@ -45,15 +41,15 @@ function createData(rolename, accesspages, edit) {
 // ];
 
 const rows = [
-    { "rolename": "ApplicationTester", "accesspages": "Dashboard,CustomerView,SiteView,Tickets,New Ticket" },
-    { "rolename": "EIRAAssetManagement", "accesspages": "Dashboard,SiteView,Tickets,Events,New Ticket,Analysis,Documents Upload,Documents Download,Reports" },
-    { "rolename": "EIRACustomer	", "accesspages": "Dashboard,SiteView,Tickets,Events,Analysis,Documents Download,Reports"},
-    { "rolename": "EIRATicketing	", "accesspages": "Dashboard,Tickets,New Ticket,Documents Upload,Documents Download" },
-    { "rolename": "EndCustomer", "accesspages": "Dashboard,SiteView,Events,Analysis,User Configuration" },
-    { "rolename": "ICEAdmin", "accesspages": "Dashboard,CustomerView,SiteView,Tickets,Events,New Ticket,Analysis,Documents Upload,Documents Download,Reports,Customer Configuration,Site Configuration,Equipment Configuration,StandardParameter Configuration,Master Upload,User Configuration"},
+    { "rolename": "Application Tester", "accesspages": "Dashboard,CustomerView,SiteView,Tickets,New Ticket" },
+    { "rolename": "EIRA Asset Management", "accesspages": "Dashboard,SiteView,Tickets,Events,New Ticket,Analysis,Documents Upload,Documents Download,Reports" },
+    { "rolename": "EIRA Customer	", "accesspages": "Dashboard,SiteView,Tickets,Events,Analysis,Documents Download,Reports" },
+    { "rolename": "EIRA Ticketing	", "accesspages": "Dashboard,Tickets,New Ticket,Documents Upload,Documents Download" },
+    { "rolename": "End Customer", "accesspages": "Dashboard,SiteView,Events,Analysis,User Configuration" },
+    { "rolename": "ICE Admin", "accesspages": "Dashboard,CustomerView,SiteView,Tickets,Events,New Ticket,Analysis,Documents Upload,Documents Download,Reports,Customer Configuration,Site Configuration,Equipment Configuration,StandardParameter Configuration,Master Upload,User Configuration" },
     { "rolename": "Monitoring", "accesspages": "Dashboard,SiteView,Events,Analysis" },
-    { "rolename": "Site Lead", "accesspages": "	Dashboard,Tickets,Reports"},
-    { "rolename": "Superadmin", "accesspages": "Team Lead" }
+    { "rolename": "Site Lead", "accesspages": "	Dashboard,Tickets,Reports" },
+    { "rolename": "Super admin", "accesspages": "Team Lead" }
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -118,7 +114,10 @@ function EnhancedTableHead(props) {
         onRequestSort(event, property);
     };
 
+
+
     return (
+
         <TableHead>
             <TableRow>
 
@@ -146,6 +145,7 @@ function EnhancedTableHead(props) {
                 ))}
             </TableRow>
         </TableHead>
+
     );
 }
 
@@ -160,6 +160,7 @@ EnhancedTableHead.propTypes = {
 
 function EnhancedTableToolbar(props) {
     const { numSelected } = props;
+
 
     return (
         <Toolbar
@@ -218,6 +219,15 @@ function MappingTab() {
     const [page, setPage] = React.useState(0);
     const [dense, setDense] = React.useState(false);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
+
+    const navigate = useNavigate
+  
+    // const [userName, setEmail] = React.useState('')
+   
+    const handleNavigate = () => {
+        console.log("navigate")
+        navigate('/addrole')   
+    }
 
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -282,41 +292,51 @@ function MappingTab() {
         [order, orderBy, page, rowsPerPage],
     );
 
-    return (
-        <Box sx={{ width: '100%' }}>
-            <Paper sx={{ width: '100%', mb: 2 }}>
-                <EnhancedTableToolbar numSelected={selected.length} />
-                <TableContainer>
-                    <Table
-                        sx={{ minWidth: 750 }}
-                        aria-labelledby="tableTitle"
-                        size={dense ? 'small' : 'medium'}
-                    >
-                        <EnhancedTableHead
-                            numSelected={selected.length}
-                            order={order}
-                            orderBy={orderBy}
-                            onSelectAllClick={handleSelectAllClick}
-                            onRequestSort={handleRequestSort}
-                            rowCount={rows.length}
-                        />
-                        <TableBody>
-                            {visibleRows.map((row, index) => {
-                                const isItemSelected = isSelected(row.name);
-                                const labelId = `enhanced-table-checkbox-${index}`;
+    // const navigate = useNavigate
+  
+    // const [userName, setEmail] = React.useState('')
+   
+    // const handleNavigate = () => {
+    //     console.log("navigate")
+    //     navigate('/addrole')   
+    // }
 
-                                return (
-                                    <TableRow
-                                        hover
-                                        onClick={(event) => handleClick(event, row.name)}
-                                        role="checkbox"
-                                        aria-checked={isItemSelected}
-                                        tabIndex={-1}
-                                        key={row.name}
-                                        selected={isItemSelected}
-                                        sx={{ cursor: 'pointer' }}
-                                    >
-                                        {/* <TableCell padding="checkbox">
+    return (
+        <div className='map-tab'>
+            <Box sx={{ width: '100%' }}>
+                <Paper sx={{ width: '100%', mb: 2 }}>
+                    <EnhancedTableToolbar numSelected={selected.length} />
+                    <TableContainer>
+                        <Table
+                            sx={{ minWidth: 750 }}
+                            aria-labelledby="tableTitle"
+                            size={dense ? 'small' : 'medium'}
+                        >
+                            <EnhancedTableHead
+                                numSelected={selected.length}
+                                order={order}
+                                orderBy={orderBy}
+                                onSelectAllClick={handleSelectAllClick}
+                                onRequestSort={handleRequestSort}
+                                rowCount={rows.length}
+                            />
+                            <TableBody>
+                                {visibleRows.map((row, index) => {
+                                    const isItemSelected = isSelected(row.name);
+                                    const labelId = `enhanced-table-checkbox-${index}`;
+
+                                    return (
+                                        <TableRow
+                                            hover
+                                            onClick={(event) => handleClick(event, row.name)}
+                                            role="checkbox"
+                                            aria-checked={isItemSelected}
+                                            tabIndex={-1}
+                                            key={row.name}
+                                            selected={isItemSelected}
+                                            sx={{ cursor: 'pointer' }}
+                                        >
+                                            {/* <TableCell padding="checkbox">
                       <Checkbox
                         color="primary"
                         checked={isItemSelected}
@@ -325,47 +345,49 @@ function MappingTab() {
                         }}
                       />
                     </TableCell> */}
-                                        <TableCell
-                                            component="th"
-                                            id={labelId}
-                                            scope="row"
-                                            padding="none"
-                                        >
-                                            {row.name}
-                                        </TableCell>
+                                            <TableCell
+                                                component="th"
+                                                id={labelId}
+                                                scope="row"
+                                                padding="none"
+                                            >
+                                                {row.name}
+                                            </TableCell>
 
-                                        <TableCell style={{ align: "left", fontSize: "14px" }}>{row.rolename}</TableCell>
-                                        <TableCell style={{ align: "left", fontSize: "14px" }}>{row.accesspages}</TableCell>
-                                        <TableCell style={{ align: "left", fontSize: "14px" }}>{row.edit}</TableCell>
-
-                                        <TableCell style={{ align: "left", fontSize: "14px" }} >< EditOutlinedIcon />  </TableCell>
+                                            <TableCell style={{ align: "left", fontSize: "14px" }}>{row.rolename}</TableCell>
+                                            <TableCell style={{ align: "left", fontSize: "14px" }}>{row.accesspages}</TableCell>
+                                            <TableCell style={{ align: "left", fontSize: "14px" }}>{row.edit}</TableCell>
+                                           <Link> <TableCell  > <button style={{
+                                                align: "left", fontSize: "14px", backgroundColor: "blue", borderRadius: "15px",
+                                                width: "70px", lineHeight: "35px", color: "white" }} onClick={handleNavigate}>  Edit  </button> </TableCell> </Link>
+                                        </TableRow>
+                                    );
+                                })}
+                                {emptyRows > 0 && (
+                                    <TableRow
+                                        style={{
+                                            height: (dense ? 33 : 53) * emptyRows,
+                                        }}
+                                    >
+                                        <TableCell colSpan={6} />
                                     </TableRow>
-                                );
-                            })}
-                            {emptyRows > 0 && (
-                                <TableRow
-                                    style={{
-                                        height: (dense ? 33 : 53) * emptyRows,
-                                    }}
-                                >
-                                    <TableCell colSpan={6} />
-                                </TableRow>
-                            )}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-                <TablePagination
-                    rowsPerPageOptions={[5, 10, 25]}
-                    component="div"
-                    count={rows.length}
-                    rowsPerPage={rowsPerPage}
-                    page={page}
-                    onPageChange={handleChangePage}
-                    onRowsPerPageChange={handleChangeRowsPerPage}
-                />
-            </Paper>
+                                )}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                    <TablePagination
+                        rowsPerPageOptions={[5, 10, 25]}
+                        component="div"
+                        count={rows.length}
+                        rowsPerPage={rowsPerPage}
+                        page={page}
+                        onPageChange={handleChangePage}
+                        onRowsPerPageChange={handleChangeRowsPerPage}
+                    />
+                </Paper>
 
-        </Box>
+            </Box>
+        </div>
     );
 }
 

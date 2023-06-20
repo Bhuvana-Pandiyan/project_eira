@@ -32,7 +32,7 @@ const UserList = () => {
                         Search Roles
                     </div>
 
-                    <div className="search-iconuser" style={{marginTop: "-10px"}}>
+                    <div className="search-iconuser" style={{ marginTop: "-10px" }}>
                         <SearchIcon />
                     </div>
                 </div>

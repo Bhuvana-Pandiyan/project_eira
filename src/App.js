@@ -18,6 +18,7 @@ import AddRole from "./Components/AddRole";
 import ViewTicket from "./Components/ViewTicket";
 import AllAlert from "./Components/AllAlert";
 import Alltickets from "./Components/AllTickets";
+import MappingTab from "./Components/MappingTab";
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
               <Route path="home" element={<Eira />} />
               <Route path="role" element={<RolesList />} />
               <Route path="addrole" element={<AddRole />} />
+              <Route path="mapping" element={<MappingTab />} />
               <Route path="user" element={<UserList />} />
               <Route path="" element={<ViewTicket />} />
             </Route>

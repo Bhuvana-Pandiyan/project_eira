@@ -15,45 +15,12 @@
     margin-right: 30px;
 }
 
-/* .barcharticon {
-    position: absolute;
-    left: 20.83%;
-    right: 20.83%;
-    top: 20.83%;
-    bottom: 20.83%;
-} */
-
-/* .removeicon {
-
-    width: 20px;
-    height: 14px;
-    background: rgba(50, 71, 92, 0.6);
+.map-tab{
+    position: relative;
+    left: 250px;
+    top: 20%;
+    
 }
-
-.insertlinkicon {
-    width: 20px;
-    height: 10px;
-
-    background: rgba(50, 71, 92, 0.6);
-    transform: rotate(-45deg);
-}
-
-.viewlisticon {
-    width: 16px;
-    height: 12px;
-}
-
-.helpoutlineicon {
-    position: absolute;
-    left: 8.33%;
-    right: 8.33%;
-    top: 8.33%;
-    bottom: 8.33%;
-} */
-
-/* .table{
-    margin-right: 100px;
-} */
 
 .eira {
     position: absolute;
@@ -154,8 +121,8 @@
 
 .mains {
     padding: 0px;
-    margin-top: +100px;
-  
+    margin-top: 150px;
+
     /* background: rgba(0, 74, 255, 0.12); */
     /* width: 1440px;
     height: 768px; */
@@ -254,7 +221,7 @@
     margin-top: 2%;
     display: flex;
     justify-content: space-around;
-    
+
 }
 
 .new {
@@ -365,17 +332,12 @@ body {
     margin-left: -20% !important
 }
 
-.switch-icon {
-    margin-right: 50%;
-}
-
 .permission {
-    margin-left: 30%;
-    margin-top: -105%;
+    margin-top: -85%;
 }
 
 .switch {
-    margin-left: 20%;
+    margin-right: 25%;
     margin-top: 5%;
 }
 
@@ -385,6 +347,54 @@ body {
     width: 100px;
     height: 50px;
     border-radius: 34px;
+}
+
+.first-d {
+    position: relative;
+    right: 15%;
+    top: -30px;
+}
+
+.secn-d {
+    position: relative;
+    left: 37%;
+    top: -270px;
+}
+
+.thrd-d {
+    position: relative;
+    right: 15%;
+    top: -180px;
+}
+
+.fr-d {
+    position: relative;
+    left: 37%;
+    top: -483px;
+}
+
+.first-dis {
+    position: relative;
+    left: 5%;
+    top: -1120px;
+}
+
+.sec-dis {
+    position: relative;
+    left: 70%;
+    top: -1360px;
+}
+
+.thrd-dis {
+    position: relative;
+    left: 5%;
+    top: -1260px;
+}
+
+.frth-dis {
+    position: relative;
+    left: 70%;
+    top: -1560px;
 }
 
 .switch-button1 {
@@ -589,6 +599,7 @@ body {
 }
 
 .mains {
+
     /* Styles for mobile screens (up to 767px) */
     @media (max-width: 767px) {
         /* background-color: rgb(188, 230, 246); */
@@ -609,39 +620,39 @@ body {
     }
   }  */
 
-  .pagination{
+.pagination {
     width: 100px;
-  }
+}
 
-  .pagination{
+.pagination {
 
     @media screen and (min-width: 1020px) {
         .pagination {
             margin-right: 1%;
         }
     }
-    
+
     @media screen and (min-width: 1440px) {
         .pagination {
             margin-right: 2%;
         }
     }
-    
+
     @media screen and (min-width: 1600px) {
         .pagination {
             margin-right: 3%;
         }
     }
-    
+
     @media screen and (min-width: 1920px) {
         .pagination {
             margin-right: 5.2%;
         }
     }
-    
+
     @media screen and (min-width: 2560px) {
         .pagination {
             margin-right: 5.8%;
         }
-  }
+    }
 }

@@ -289,9 +289,8 @@ function Alltickets() {
                 <EnhancedTableToolbar numSelected={selected.length} />
                 <TableContainer>
                     <Table
-                        sx={{ minWidth: 750 }}
+                        sx={{ minWidth: 750, height: "20px" }}
                         aria-labelledby="tableTitle"
-
                     >
                         <EnhancedTableHead
                             numSelected={selected.length}

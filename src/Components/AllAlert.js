@@ -287,9 +287,8 @@ function AllAlert() {
                 <EnhancedTableToolbar numSelected={selected.length} />
                 <TableContainer>
                     <Table
-                        sx={{ minWidth: 750 }}
+                        sx={{ minWidth: 750, height: "20px"}}
                         aria-labelledby="tableTitle"
-
                     >
                         <EnhancedTableHead
                             numSelected={selected.length}
@@ -317,18 +316,17 @@ function AllAlert() {
                                             selected={isItemSelected}
                                             sx={{ cursor: 'pointer' }}
                                         >
-
-                                            <TableCell align="right">{row.ticketno}</TableCell>
-                                            <TableCell align="right">{row.sitename}</TableCell>
-                                            <TableCell align="right">{row.priority}</TableCell>
-                                            <TableCell align="right">{row.createdtime}</TableCell>
-                                            {/* <TableCell align="right">{row.category}</TableCell> */}
-                                            <TableCell align="right">{row.subject}</TableCell>
-                                            <TableCell align="right">{row.assignedto}</TableCell>
-                                            <TableCell align="right">{row.state}</TableCell>
-                                            <TableCell align="right">{row.status}</TableCell>
-                                            <TableCell align="right">{row.completiondate}</TableCell>
-                                            <TableCell align="right">{row.createdby}</TableCell>
+                                            <TableCell  style={{ align: "right"}}>{row.ticketno}</TableCell>
+                                            <TableCell  style={{ align: "right"}}>{row.sitename}</TableCell>
+                                            <TableCell  style={{ align: "right"}}>{row.priority}</TableCell>
+                                            <TableCell  style={{ align: "right"}}>{row.createdtime}</TableCell>
+                                            {/* <TableCell  style={{ align: "right", marginTop: "20px" }}>{row.category}</TableCell> */}
+                                            <TableCell  style={{ align: "right"}}>{row.subject}</TableCell>
+                                            <TableCell  style={{ align: "right"}}>{row.assignedto}</TableCell>
+                                            <TableCell  style={{ align: "right"}}>{row.state}</TableCell>
+                                            <TableCell  style={{ align: "right"}}>{row.status}</TableCell>
+                                            <TableCell  style={{ align: "right"}}>{row.completiondate}</TableCell>
+                                            <TableCell  style={{ align: "right"}}>{row.createdby}</TableCell>
                                         </TableRow>
                                     );
                                 })}

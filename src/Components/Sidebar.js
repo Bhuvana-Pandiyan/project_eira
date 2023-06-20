@@ -217,7 +217,7 @@ export default function MiniDrawer() {
                         </ListItemButton>
                     </ListItem>
 
-                    <ListItem disablePadding onClick={() => navigateCall('')}>
+                    <ListItem disablePadding onClick={() => navigateCall('addrole')}>
                         <ListItemButton>
                             <ListItemIcon>
                                 <AiFillEye color="black" size="1.7rem" />
@@ -226,7 +226,7 @@ export default function MiniDrawer() {
                         </ListItemButton>
                     </ListItem>
 
-                    <ListItem disablePadding onClick={() => navigateCall('')}>
+                    <ListItem disablePadding onClick={() => navigateCall('mapping')}>
                         <ListItemButton>
                             <ListItemIcon>
                                 < AiOutlineLink color="black" size="1.7rem" />
