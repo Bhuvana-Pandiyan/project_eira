@@ -10,7 +10,7 @@ import Eira from './Components/Eira';
 // import RoleList from './Components/RolesList';
 import Sidebar from './Components/Sidebar';
 import Viewticket from './Components/ViewTicket';
-// import Forgot from './Components/Forgot';
+import Forgot from './Components/Forgot';
 
 // import './Eira.css';
 import Loginpage from './Components/Loginpage';
