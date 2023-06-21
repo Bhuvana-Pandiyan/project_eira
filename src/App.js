@@ -38,10 +38,10 @@ function App() {
               <Route path="allalerts" element={<AllAlert />} />
               <Route path="home" element={<Eira />} />
               <Route path="role" element={<RolesList />} />
-              <Route path="addrole" element={<AddRole />} />
               <Route path="mapping" element={<MappingTab />} />
+              <Route path="addrole" element={<AddRole />} />
               <Route path="user" element={<UserList />} />
-              <Route path="" element={<ViewTicket />} />
+              <Route path="view" element={<ViewTicket />} />
             </Route>
           }
 

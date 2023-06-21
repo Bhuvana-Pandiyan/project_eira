@@ -16,9 +16,7 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import { Link } from 'react-router-dom';
 import AddRole from './AddRole';
-
 import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { visuallyHidden } from '@mui/utils';
 import { useNavigate } from 'react-router-dom';
@@ -60,6 +58,7 @@ function descendingComparator(a, b, orderBy) {
         return 1;
     }
     return 0;
+
 }
 
 function getComparator(order, orderBy) {
@@ -145,7 +144,6 @@ function EnhancedTableHead(props) {
                 ))}
             </TableRow>
         </TableHead>
-
     );
 }
 
@@ -193,7 +191,7 @@ function EnhancedTableToolbar(props) {
                 </Typography>
             )}
 
-            {numSelected > 0 ? (
+            {/* {numSelected > 0 ? (
                 <Tooltip title="">
                 </Tooltip>
             ) : (
@@ -203,7 +201,7 @@ function EnhancedTableToolbar(props) {
                     </IconButton>
                 </Tooltip>
 
-            )}
+            )} */}
         </Toolbar>
     );
 }
@@ -220,14 +218,11 @@ function MappingTab() {
     const [dense, setDense] = React.useState(false);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
-    const navigate = useNavigate
-  
+    const navigate = useNavigate()
+
     // const [userName, setEmail] = React.useState('')
+
    
-    const handleNavigate = () => {
-        console.log("navigate")
-        navigate('/addrole')   
-    }
 
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -293,14 +288,17 @@ function MappingTab() {
     );
 
     // const navigate = useNavigate
-  
+
     // const [userName, setEmail] = React.useState('')
-   
+
     // const handleNavigate = () => {
     //     console.log("navigate")
     //     navigate('/addrole')   
     // }
-
+    const handleNavigate = () => {
+        console.log("navigate")
+         navigate('/dashboard/addrole')
+    }
     return (
         <div className='map-tab'>
             <Box sx={{ width: '100%' }}>
@@ -357,9 +355,11 @@ function MappingTab() {
                                             <TableCell style={{ align: "left", fontSize: "14px" }}>{row.rolename}</TableCell>
                                             <TableCell style={{ align: "left", fontSize: "14px" }}>{row.accesspages}</TableCell>
                                             <TableCell style={{ align: "left", fontSize: "14px" }}>{row.edit}</TableCell>
-                                           <Link> <TableCell  > <button style={{
-                                                align: "left", fontSize: "14px", backgroundColor: "blue", borderRadius: "15px",
-                                                width: "70px", lineHeight: "35px", color: "white" }} onClick={handleNavigate}>  Edit  </button> </TableCell> </Link>
+                                            <TableCell  >
+                                                <button style={{
+                                                    align: "left", fontSize: "14px", backgroundColor: "blue", borderRadius: "15px",
+                                                    width: "70px", lineHeight: "35px", color: "white"
+                                                }} onClick={()=>handleNavigate()} >  Edit  </button> </TableCell> 
                                         </TableRow>
                                     );
                                 })}

@@ -20,7 +20,7 @@ import CheckCircleOutlineOutlinedIcon from '@mui/icons-material/CheckCircleOutli
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import { visuallyHidden } from '@mui/utils';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ViewTicket from './ViewTicket';
 
 function createData(siteId, priority, createdtime, category, assignedto, expectedtat, ticketCode, ticketType, actions) {
@@ -273,6 +273,8 @@ function AllTicketOverView(props) {
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [rowsPage, setRows] = React.useState([]);
+
+  const navigate = useNavigate()
   //   {"siteNo": 20393831, "sitename": "XYZ Limited", "priority": "High", "createdtime": "16-01-2023 11:23 AM", "category": "Master issue", "assignedto": "Jagan p", "expectedtat": "Due in 2 Days", "ticketType": "in Progress" },
   // const [tableValues,setTables]=React.useState([])
 
@@ -386,6 +388,11 @@ function AllTicketOverView(props) {
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - tableValues.length) : 0;
 
+    const handleNavigate = () => {
+      console.log("navigate")
+       navigate('/dashboard/view')
+  }
+
   return (
     // <div className='alltkctov'>
     <Box >
@@ -432,7 +439,9 @@ function AllTicketOverView(props) {
                       selected={isItemSelected}
                       sx={{ cursor: 'pointer' }}
                     >
-                      {<Link to='/viewTicket'> {ticketShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }} >{row.ticketCode}</TableCell>}</Link>}
+                              {/* console.log("navigate")
+         navigate('/dashboard/addrole') */}
+                     {ticketShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }} onClick={()=>handleNavigate()} >{row.ticketCode}</TableCell>}
                       {siteIdShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.siteId}</TableCell>}
                       {priorityShow && <TableCell style={{ textAlign: "center", fontSize: "14px", marginLeft: "-10px !importan" }}>{row.priority}</TableCell>}
                       {createTimeShow && <TableCell style={{ textAlign: "center", fontSize: "14px" }}>{row.createdDate}</TableCell>}

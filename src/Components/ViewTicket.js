@@ -169,7 +169,6 @@ const ViewTicket = () => {
                         },
                     }}
                 >
-
                     <Paper elevation={3} onClick={handleTicketSummary} style={{ backgroundColor: handleTicketSummary ? '#B0B0B0' : 'white', color: handleTicketSummary ? 'white' : 'black' }} >
                         <Typography className="ticket-typograpy">Ticket Summary</Typography>
                     </Paper>
@@ -194,7 +193,6 @@ const ViewTicket = () => {
                         },
                     }}
                 >
-
                     <Paper elevation={3} onclick={handleApprovalHistory} style={{ marginTop: "15px", backgroundColor: handleTicketSummary ? '#B0B0B0' : 'white', color: handleTicketSummary ? 'white' : 'black' }} >
                         <Typography className="approval-typograpy" >Approval History </Typography>
 
