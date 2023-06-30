@@ -13,7 +13,6 @@ import TableSortLabel from '@mui/material/TableSortLabel';
 import Toolbar from '@mui/material/Toolbar';
 import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils'
 
@@ -205,18 +204,6 @@ function EnhancedTableToolbar(props) {
                 }),
             }}
         >
-
-            {numSelected > 0 ? (
-                <Tooltip title="Delete">
-
-                </Tooltip>
-            ) : (
-                <Tooltip title="Filter list">
-                    <IconButton>
-
-                    </IconButton>
-                </Tooltip>
-            )}
         </Toolbar>
     );
 }

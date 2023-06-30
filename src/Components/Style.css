@@ -19,7 +19,6 @@
     position: relative;
     left: 250px;
     top: 20%;
-    
 }
 
 .eira {
@@ -339,6 +338,20 @@ body {
 .switch {
     margin-right: 25%;
     margin-top: 5%;
+}
+
+.switch {
+
+    /* Styles for mobile screens (up to 767px) */
+    @media (max-width: 767px) {
+        /* background-color: rgb(188, 230, 246); */
+        background-color: rgb(209, 205, 205);
+    }
+
+    /* Styles for laptop screens (768px and above) */
+    @media (min-width: 768px) {
+        background-color: rgb(209, 205, 205);
+    }
 }
 
 .switch-button {

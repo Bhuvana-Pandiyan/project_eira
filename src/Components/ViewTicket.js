@@ -63,11 +63,11 @@ const ViewTicket = () => {
 
         <div className="view">
             <div>
-                <div className="arrow-view">
+                <div className="arrow-view" >
                     <ArrowBackIcon />
                 </div>
                 <div className="view-ticket">
-                    <h3 style={{ marginTop: "-30px", marginLeft: "60px" }}> View Ticket</h3><p style={{ marginTop: "-19px", marginLeft: "170px" }}>- XYZ Limited</p>
+                    <h3 style={{ marginTop: "10px", marginLeft: "60px" }}> View Ticket</h3><p style={{ marginTop: "-26px", marginLeft: "170px" }}>- XYZ Limited</p>
                 </div>
                 <div className="tibutton">
                     <div>
@@ -117,7 +117,7 @@ const ViewTicket = () => {
                                             </select>
                                         </div>
                                         <div className="enter-reason">
-                                           <div> <p style={{ color: "#B5B5B5" }}>Enter reason</p>  </div>
+                                            <div> <p style={{ color: "#B5B5B5" }}>Enter reason</p>  </div>
                                             <Box
                                                 component="form"
                                                 sx={{
@@ -166,6 +166,8 @@ const ViewTicket = () => {
                             m: 1,
                             width: 200,
                             height: 48,
+                           
+                            
                         },
                     }}
                 >
@@ -229,10 +231,8 @@ const ViewTicket = () => {
                         },
                     }}
                 >
-
                     <Paper elevation={3} onclick={handleTicketActivity} style={{ marginTop: "15px", backgroundColor: handleTicketActivity ? '#B0B0B0' : 'white', color: handleTicketActivity ? 'white' : 'black' }} >
-                        <Typography className="approval-typograpy" >TicketActivity </Typography>
-
+                        <Typography className="approval-typograpy" >Ticket Activity </Typography>
                     </Paper>
 
                 </Box>
@@ -250,7 +250,6 @@ const ViewTicket = () => {
                         },
                     }}
                 >
-
                     <Paper elevation={3} style={{ background: "White" }} >
                         <Typography style={{ fontSize: "20px", fontweight: "500", marginLeft: "20px", marginTop: "15px" }}>
                             Ticket Details

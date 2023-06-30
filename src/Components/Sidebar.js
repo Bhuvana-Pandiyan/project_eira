@@ -31,9 +31,6 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import { AiOutlineUser } from "react-icons/ai";
 
 
-
-
-
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({

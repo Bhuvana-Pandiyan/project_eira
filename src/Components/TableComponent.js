@@ -228,17 +228,6 @@ function EnhancedTableToolbar(props) {
 
         </Typography>
       )}
-
-      {numSelected > 0 ? (
-        <Tooltip title="Delete">
-        </Tooltip>
-      ) : (
-        <Tooltip title="Filter list">
-          <IconButton>
-
-          </IconButton>
-        </Tooltip>
-      )}
     </Toolbar>
   );
 }

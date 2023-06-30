@@ -7,6 +7,10 @@
     margin-top: 40px;
 }
 
+.v-t{
+    margin-top: 20px;
+}
+
 .view{
     margin-top: 40px;
     margin-left: 60px;
@@ -79,8 +83,8 @@
 }
 
 .arrow-view {
-    margin-top: -65px;
-    margin-left: 20px;
+    position: relative;
+    top: 43px;
 }
 
 .h-view {

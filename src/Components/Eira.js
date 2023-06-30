@@ -208,7 +208,8 @@ const Eira = () => {
               aria-labelledby="modal-modal-title"
               aria-describedby="modal-modal-description"
             >
-              <Box sx={style}>
+              <Box sx={style}
+             height={"250px"}>
 
                 <div className="box-typo">
                   <Typography id="modal-modal-title" variant="h6" component="h2" style={{ fontSize: "13px", margintop: "-5px" }}>

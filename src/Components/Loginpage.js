@@ -90,7 +90,7 @@ const Loginpage = () => {
                 window.location.reload();
             }
             else {
-                alert("incorrect password or user name ")
+                alert("incorrect password or user name")
             }
         })
     }

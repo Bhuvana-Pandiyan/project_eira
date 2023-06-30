@@ -19,7 +19,10 @@ import AddRole from './AddRole';
 import IconButton from '@mui/material/IconButton';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { visuallyHidden } from '@mui/utils';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate  } from 'react-router-dom';
+
+import { useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 function createData(rolename, accesspages, edit) {
     return {
@@ -39,15 +42,15 @@ function createData(rolename, accesspages, edit) {
 // ];
 
 const rows = [
-    { "rolename": "Application Tester", "accesspages": "Dashboard,CustomerView,SiteView,Tickets,New Ticket" },
-    { "rolename": "EIRA Asset Management", "accesspages": "Dashboard,SiteView,Tickets,Events,New Ticket,Analysis,Documents Upload,Documents Download,Reports" },
-    { "rolename": "EIRA Customer	", "accesspages": "Dashboard,SiteView,Tickets,Events,Analysis,Documents Download,Reports" },
-    { "rolename": "EIRA Ticketing	", "accesspages": "Dashboard,Tickets,New Ticket,Documents Upload,Documents Download" },
-    { "rolename": "End Customer", "accesspages": "Dashboard,SiteView,Events,Analysis,User Configuration" },
-    { "rolename": "ICE Admin", "accesspages": "Dashboard,CustomerView,SiteView,Tickets,Events,New Ticket,Analysis,Documents Upload,Documents Download,Reports,Customer Configuration,Site Configuration,Equipment Configuration,StandardParameter Configuration,Master Upload,User Configuration" },
-    { "rolename": "Monitoring", "accesspages": "Dashboard,SiteView,Events,Analysis" },
+    { "rolename": "Application Tester", "accesspages": "Dashboard,CustomerView,Site Configuration,Tickets,New Ticket" },
+    { "rolename": "EIRA Asset Management", "accesspages": "Dashboard,Site Configuration,Tickets,Equipment Configuration,New Ticket,Analytics,Documentation,Reports" },
+    { "rolename": "EIRA Customer	", "accesspages": "Dashboard,Site Configuration,Tickets,Equipment Configuration,Analytics,Reports" },
+    { "rolename": "EIRA Ticketing	", "accesspages": "Dashboard,Tickets,New Ticket,Documentation," },
+    { "rolename": "End Customer", "accesspages": "Dashboard,Site Configuration,Equipment Configuration,Analytics,User Configuration" },
+    { "rolename": "ICE Admin", "accesspages": "Dashboard,CustomerView,Site Configuration,Tickets,Equipment Configuration,New Ticket,Analytics,Documentation,Reports,Customer Configuration,Site Configuration,Equipment Configuration,User Configuration" },
+    { "rolename": "Monitoring", "accesspages": "Dashboard,Site Configuration,Equipment Configuration,Analytics" },
     { "rolename": "Site Lead", "accesspages": "	Dashboard,Tickets,Reports" },
-    { "rolename": "Super admin", "accesspages": "Team Lead" }
+   
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -187,7 +190,6 @@ function EnhancedTableToolbar(props) {
                     id="tableTitle"
                     component="div"
                 >
-
                 </Typography>
             )}
 
@@ -217,12 +219,11 @@ function MappingTab() {
     const [page, setPage] = React.useState(0);
     const [dense, setDense] = React.useState(false);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
+    const [selectedRow, setSelectedRow] = React.useState(null);
 
     const navigate = useNavigate()
 
     // const [userName, setEmail] = React.useState('')
-
-   
 
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -257,6 +258,16 @@ function MappingTab() {
         }
 
         setSelected(newSelected);
+    };
+
+    const handleOnClick = (event, row) => {
+        if (selectedRow === row) {
+            // Deselect the row if it is already selected
+            setSelectedRow(null);
+        } else {
+            // Select the clicked row
+            setSelectedRow(row);
+        }
     };
 
     const handleChangePage = (event, newPage) => {
@@ -295,10 +306,11 @@ function MappingTab() {
     //     console.log("navigate")
     //     navigate('/addrole')   
     // }
-    const handleNavigate = () => {
-        console.log("navigate")
-         navigate('/dashboard/addrole')
+    const handleNavigate = (id) => {
+        console.log("id",id)
+        // navigate('/dashboard/addrole')
     }
+    console.log(visibleRows,"visibleRows");
     return (
         <div className='map-tab'>
             <Box sx={{ width: '100%' }}>
@@ -326,7 +338,7 @@ function MappingTab() {
                                     return (
                                         <TableRow
                                             hover
-                                            onClick={(event) => handleClick(event, row.name)}
+                                            onClick={(event) => handleClick(event, row.id)}
                                             role="checkbox"
                                             aria-checked={isItemSelected}
                                             tabIndex={-1}
@@ -334,32 +346,18 @@ function MappingTab() {
                                             selected={isItemSelected}
                                             sx={{ cursor: 'pointer' }}
                                         >
-                                            {/* <TableCell padding="checkbox">
-                      <Checkbox
-                        color="primary"
-                        checked={isItemSelected}
-                        inputProps={{
-                          'aria-labelledby': labelId,
-                        }}
-                      />
-                    </TableCell> */}
-                                            <TableCell
-                                                component="th"
-                                                id={labelId}
-                                                scope="row"
-                                                padding="none"
-                                            >
-                                                {row.name}
-                                            </TableCell>
 
-                                            <TableCell style={{ align: "left", fontSize: "14px" }}>{row.rolename}</TableCell>
+                                        
+                                            <TableCell style={{ align: "left", fontSize: "14px" }} >{row.rolename}</TableCell>
                                             <TableCell style={{ align: "left", fontSize: "14px" }}>{row.accesspages}</TableCell>
                                             <TableCell style={{ align: "left", fontSize: "14px" }}>{row.edit}</TableCell>
                                             <TableCell  >
-                                                <button style={{
-                                                    align: "left", fontSize: "14px", backgroundColor: "blue", borderRadius: "15px",
-                                                    width: "70px", lineHeight: "35px", color: "white"
-                                                }} onClick={()=>handleNavigate()} >  Edit  </button> </TableCell> 
+                                            {/* <button onClick={() => handleNavigate(row.rolename)}>Edit</button>  */}
+                                            <Link to = {`/dashboard/addrole?prop1=${row.rolename}`}>Edit</Link>
+                                            </TableCell>
+
+
+
                                         </TableRow>
                                     );
                                 })}
