@@ -95,9 +95,15 @@ const Loginpage = () => {
         })
     }
 
+    // const handleNavigate = () => {
+    //     console.log("navigate")
+    //      navigate('/dashboard/view')
+    // }
+  
+
     const handleForgot = () => {
         console.log("navigate")
-        navigate('/forgot')
+        navigate('/forgettenpassword')
     }
 
     const getCall = () => {
